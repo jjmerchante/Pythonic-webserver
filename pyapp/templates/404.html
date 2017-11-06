@@ -1,0 +1,90 @@
+{% extends "base.html" %} {% block header %}
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand page-scroll" href="/">Pythonic <small>ALPHA</small></a>
+        </div>
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+{% endblock %} {% block content %}
+<div class="alert alert-info feedback-alert" role="alert">
+    This website is in <strong>alpha</strong> version, your feedback is welcome
+</div>
+<div class="container">
+    <div class="page-header">
+        <h1>404 <small>Not found</small></h1>
+    </div>
+    <div class="jumbotron">
+        <h2>What are you looking for?</h2>
+
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                    <h4 class="panel-title">
+                <a role="button" href="/">
+                  Analyze a new project/user
+                </a>
+              </h4>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingTwo">
+                    <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Results of a user
+                </a>
+              </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                    <div class="panel-body">
+                        <form id="user-form-search">
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" name="username" value="" id="name-user">
+                                <button type="submit" class="btn btn-primary" id="btn-results-user">Results</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingThree">
+                    <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  Results of a repository
+                </a>
+              </h4>
+                </div>
+                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                    <div class="panel-body">
+                        <form id="repo-form-search">
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" name="username" value="" id="name-user-repo">
+                                <label for="project">Repository</label>
+                                <input type="text" name="repository" value="" id="name-repo">
+                                <button type="submit" class="btn btn-primary" id="btn-results-repo">Results</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                    <h4 class="panel-title">
+                <a role="button" href="/feedback">
+                  Give feedback or report a bug
+                </a>
+              </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block js %}{% endblock %}

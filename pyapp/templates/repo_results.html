@@ -1,0 +1,416 @@
+{% extends "base.html" %}
+
+
+{% block header %}
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand page-scroll" href="/">Pythonic <small>ALPHA</small></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a class="page-scroll" href="#analyze-section">Analyze</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#results">Results</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#suggestions">Suggestions</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#specific-idioms">Specific</a>
+                </li>
+                <li>
+                    <a href="/feedback">Feedback</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+{% endblock %}
+
+{% block content %}
+<div class="alert alert-info feedback-alert" role="alert" >
+    This website is in <strong>alpha</strong> version, your feedback is welcome
+</div>
+
+<section id="analyze-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center result-outter">
+                <div class="box">
+                    <h3><a id="url-project" href="{{ repository }}">{{ repository }}</a></h3>
+                    <p class="text-muted" id="last-analysis"></p>
+                    <button type="submit" class="btn btn-primary btn-xl analyze-repo-btn" id="analyze-this-repo">
+                        Analyze it!
+                    </button>
+                    <div class="checkbox">
+                        <label>
+                        <input type="checkbox" id="only-modified-check" checked="">
+                         <span class="text-muted">Ignore files that haven't been modified</span>
+                      </label>
+                    </div>
+                    <br>
+                    <div class="progress analyze-progress" hidden="">
+                        <div class="progress-bar progress-bar-striped active" id="progress-bar" role="progressbar" style="width: 0%">
+                        </div>
+                        <span id="progress-percent">0%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="results">
+    <div id="results" hidden="">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Results</h2>
+                    <hr class="primary">
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="box">
+                <div class="row">
+                    <!--<h3>Results</h3>-->
+                    <div class="col-md-6">
+                    <table class="table">
+                        <!--<caption></caption>-->
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Level</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Beginner</th>
+                                <td>
+                                    <div class="progress">
+                                      <div id="beginner-bar" class="mark-bar progress-bar progress-bar-success" role="progressbar" style="width: 40%; min-width: 2em;">
+                                          <span id="beginner-mark">0</span>
+                                      </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Intermediate</th>
+                                <td>
+                                    <div class="progress">
+                                      <div id="intermediate-bar" class="mark-bar progress-bar progress-bar-success" role="progressbar" style="width: 40%; min-width: 2em;">
+                                          <span id="intermediate-mark">0</span>
+                                      </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Advanced</th>
+                                <td>
+                                    <div class="progress">
+                                      <div id="advance-bar" class="mark-bar progress-bar progress-bar-success" role="progressbar" style="width: 40%; min-width: 2em;">
+                                          <span id="advance-mark">0</span>
+                                      </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="panel panel-default">
+                              <div class="panel-body">
+                                  <span id="firstMsgResults"></span>
+                              </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="container" id="suggestions">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Suggestions</h2>
+                    <hr class="primary">
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="box">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <p>There are some idioms that do not appear in the repository.
+                                You can click on them for more information and improve your code to be
+                                more pythonic in the future.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="panel panel-danger">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Beginner idioms</h3>
+                            </div>
+                            <div class="panel-body">
+                                <ul class="list-group" id="list-beginner">
+                                    <!-- Idioms beginner -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="panel panel-danger">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Intermediate idioms</h3>
+                            </div>
+                            <div class="panel-body">
+                                <ul class="list-group" id="list-intermediate">
+                                    <!-- Idioms intermediate -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="panel panel-danger">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Advanced idioms</h3>
+                            </div>
+                            <div class="panel-body">
+                                <ul class="list-group" id="list-advance">
+                                    <!-- Idioms advanced -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="container" id="specific-idioms">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Specific pythonic idioms</h2>
+                    <hr class="primary">
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 text-center result-outter">
+                    <div class="service-box result" id="listComprehension">
+                        <h3>List comprehensions</h3>
+                        <p class="text-muted">Create lists in a natural and concise way.</p>
+                        <h4 class="times">0</h4>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center result-outter">
+                    <div class="service-box result" id="generators">
+                        <h3>Generator Expressions</h3>
+                        <p class="text-muted">Lists with high performance and memory efficient.</p>
+                        <h4 class="times">0</h4>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center result-outter">
+                    <div class="service-box result" id="idiomMethods1">
+                        <h3>Beginner magic methods</h3>
+                        <p class="text-muted">Methods that are invoked with the use of certain syntax.</p>
+                        <h4 class="times">0</h4>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center result-outter">
+                    <div class="service-box result" id="idiomMethods2">
+                        <h3>Intermediate magic methods</h3>
+                        <p class="text-muted">Magic methods for advanced Python programmers.</p>
+                        <h4 class="times">0</h4>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center result-outter">
+                    <div class="service-box result" id="idiomMethods3">
+                        <h3>Pro magic methods</h3>
+                        <p class="text-muted">Special methods that are rarely implemented, are you a pro?</p>
+                        <h4 class="times">0</h4>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center result-outter">
+                    <div class="service-box result" id="NestedFunction">
+                        <h3>Inner functions</h3>
+                        <p class="text-muted">Protect your function from anything happening outside.</p>
+                        <h4 class="times">0</h4>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center result-outter">
+                    <div class="service-box result" id="docstring">
+                        <h3>Documentation</h3>
+                        <p class="text-muted">Why? Come in a year and tell me why did you do that.</p>
+                        <h4 class="times">0</h4>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center result-outter">
+                    <div class="service-box result" id="decorator">
+                        <h3>Decorators</h3>
+                        <p class="text-muted">Modify the functionality of a method by adding one line.</p>
+                        <h4 class="times">0</h4>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center result-outter">
+                    <div class="service-box result" id="namedTuple">
+                        <h3>Named tuple</h3>
+                        <p class="text-muted">Use a key for the elements of your tuple.</p>
+                        <h4 class="times">0</h4>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center result-outter">
+                    <div class="service-box result" id="yield">
+                        <h3>Yield</h3>
+                        <p class="text-muted">Use yield to keep the state in your function and make generators.</p>
+                        <h4 class="times">0</h4>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center result-outter">
+                    <div class="service-box result" id="with">
+                        <h3>With</h3>
+                        <p class="text-muted">Execute two operations in one line, with a block of code between them.</p>
+                        <h4 class="times">0</h4>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center result-outter">
+                    <div class="service-box result" id="lambda">
+                        <h3>Lambda</h3>
+                        <p class="text-muted">Pass functions to other functions in one line without declaring it.</p>
+                        <h4 class="times">0</h4>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center result-outter">
+                    <div class="service-box result" id="assert">
+                        <h3>Assert</h3>
+                        <p class="text-muted">Insert debugging assertion into a program and raise an error if the condition is false.</p>
+                        <h4 class="times">0</h4>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center result-outter">
+                    <div class="service-box result" id="finally">
+                        <h3>Finally block</h3>
+                        <p class="text-muted">Interesting when you want to do something before leaving a try-except.</p>
+                        <h4 class="times">0</h4>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center result-outter">
+                    <div class="service-box result" id="deque">
+                        <h3>deque collection</h3>
+                        <p class="text-muted">Generalization of stacks and queues with thread-safe support and memory efficient.</p>
+                        <h4 class="times">0</h4>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center result-outter">
+                    <div class="service-box result" id="defaultdict">
+                        <h3>defaultdict collection</h3>
+                        <p class="text-muted">Used for dictionaries that should start with a default value.</p>
+                        <h4 class="times">0</h4>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center result-outter">
+                    <div class="service-box result" id="orderecdict">
+                        <h3>OrderedDict collection</h3>
+                        <p class="text-muted">Remembers its insertion order, can be useful for making a sorted dictionary.</p>
+                        <h4 class="times">0</h4>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center result-outter">
+                    <div class="service-box result" id="assignOneLine">
+                        <h3>Update multiple variables in 1 line</h3>
+                        <p class="text-muted">Assign or swap variables in one line.</p>
+                        <h4 class="times">0</h4>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center result-outter">
+                    <div class="service-box result" id="ifNameMain">
+                        <h3><i>if __name__ == "__main__"</i> block</h3>
+                        <p class="text-muted">Don't execute some code when is used as an imported module.</p>
+                        <h4 class="times">0</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" tabindex="-1" role="dialog" id="result-modal">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 id="result-modal-title">Title</h4>
+                    </div>
+                    <div class="modal-body" id="result-modal-body">
+                        <table class="table" id="table-locations">
+                            <thead>
+                                <tr>
+                                    <th>File</th>
+                                    <th>Line</th>
+                                    <th>Author</th>
+                                    <th>Link</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="modal-errors" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title"></h4>
+      </div>
+      <div class="modal-body">
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<script type='text/javascript'>
+    document.addEventListener("DOMContentLoaded", function(event) {
+        {% if results %}
+            var dataRepo = {{ results | safe }};
+            showResults(dataRepo);
+        {% else %}
+            $('#last-analysis').html("This repository hasn't been analyzed yet.")
+        {% endif %}
+        checkstatus();
+    });
+</script>
+
+{% endblock %}
+
+{% block js %}
+    <script src="/static/js/analyzer.js" charset="utf-8"></script>
+{% endblock %}

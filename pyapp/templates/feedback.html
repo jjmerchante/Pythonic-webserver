@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+{% load app_filters %}
+
+
+{% block header %}
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand page-scroll" href="/">Pythonic <small>ALPHA</small></a>
+        </div>
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+{% endblock %}
+
+{% block content %}
+<section class="feedback">
+    <div id="feedback" >
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Feedback</h2>
+                    <hr class="primary">
+                </div>
+            </div>
+            <div class="row">
+                <div class="panel with-nav-tabs panel-default">
+                   <div class="panel-heading">
+                           <ul class="nav nav-tabs">
+                               <li class="active"><a href="#tab1info" data-toggle="tab">Contact form</a></li>
+                               <!--<li><a href="#tab2info" data-toggle="tab">Info 2</a></li>
+                               <li><a href="#tab3info" data-toggle="tab">Info 3</a></li>
+                               <li class="dropdown">
+                                   <a href="#" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+                                   <ul class="dropdown-menu" role="menu">
+                                       <li><a href="#tab4info" data-toggle="tab">Info 4</a></li>
+                                       <li><a href="#tab5info" data-toggle="tab">Info 5</a></li>
+                                   </ul>
+                               </li>-->
+                           </ul>
+                   </div>
+                   <div class="panel-body">
+                       <div class="tab-content">
+                           <div class="tab-pane fade in active" id="tab1info">
+                               <div class="well well-sm">
+                                    <form id="feedback-form">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="name">Name</label>
+                                                <input name="name" type="text" class="form-control" id="name" placeholder="Enter name" required="required" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="email">Email Address</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <span class="glyphicon glyphicon-envelope"></span>
+                                                    </span>
+                                                    <input name="email" type="email" class="form-control" id="email" placeholder="Enter email" required="required" maxlength="250"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="name">Message</label>
+                                                <textarea name="message" id="message" class="form-control" rows="9" cols="25" required="required"
+                                                    placeholder="Message" maxlength="1000"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <button type="submit" class="btn btn-primary pull-right" id="btnContactUs">
+                                                Send Message
+                                            </button>
+                                        </div>
+                                    </div>
+                                    </form>
+                                </div>
+                           </div>
+                           <!--<div class="tab-pane fade" id="tab2info">Contact form</div>
+                           <div class="tab-pane fade" id="tab3info">Info 3</div>
+                           <div class="tab-pane fade" id="tab4info">Info 4</div>
+                           <div class="tab-pane fade" id="tab5info">Info 5</div>-->
+                       </div>
+                   </div>
+               </div>
+            </div>
+        </div>
+        <br>
+
+    <div id="modal-feedback" class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Feedback</h4>
+          </div>
+          <div class="modal-body">
+            <p id="result-feedback"></p>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+</section>
+
+{% endblock %}
+
+{% block js %}
+    <script src="/static/js/feedback.js" charset="utf-8"></script>
+{% endblock %}

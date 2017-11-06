@@ -1,0 +1,193 @@
+.result {
+    /*border: solid 1px #aaa;*/
+    padding: 10px 2px 10px 2px;
+    margin: auto;
+    background-color: white/*rgba(240, 240, 240, 0.7)*/;
+    box-shadow: 0px 0px 7px -2px rgba(0, 0, 0, 0.7);
+    border-radius: 20px;
+}
+
+.result:hover {
+    box-shadow: 0px 0px 18px -2px rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+}
+
+.times {
+    color: #F05F40;
+    font-weight: bold;
+}
+
+#result-modal-title {
+    color: #F05F40;
+    font-weight: bold;
+}
+
+body .progress-bar {
+    background-color: #F05F40;
+    font-weight: bold;
+    color: black;
+}
+
+div.mark-bar {
+    color: white;
+}
+
+#progress-percent {
+    color: black;
+    position: absolute;
+    left: 50%;
+}
+
+.button-center {
+    margin: 0 auto;
+}
+
+.box {
+    padding: 10px 20px 10px 20px;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0px 0px 20px -15px rgba(255, 0, 0, 1);
+    border-radius: 5px;
+}
+
+body#page-top {
+    background-color: rgb(230,231,233);
+    /*background-color: rgb(247,248,250);*/
+}
+
+div.analyze-progress {
+    margin: 20px;
+}
+
+div.progress {
+    margin: 0;
+}
+
+body section {
+    padding-bottom: 0px;
+}
+
+/* http://bootsnipp.com/snippets/featured/glyphicon-animate-rotation-and-flip */
+.gly-spin {
+  -webkit-animation: spin 2s infinite linear;
+  -moz-animation: spin 2s infinite linear;
+  -o-animation: spin 2s infinite linear;
+  animation: spin 2s infinite linear;
+}
+@-moz-keyframes spin {
+  0% {
+    -moz-transform: rotate(0deg);
+  }
+  100% {
+    -moz-transform: rotate(359deg);
+  }
+}
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+  }
+}
+@-o-keyframes spin {
+  0% {
+    -o-transform: rotate(0deg);
+  }
+  100% {
+    -o-transform: rotate(359deg);
+  }
+}
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+.alert.feedback-alert {
+    margin-top: 50px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.feedback-alert:hover {
+  color: #fff;
+  text-decoration: none;
+  background-color: #4d9add;
+  cursor: pointer;
+}
+
+.header-content {
+    margin-top: 60px;
+}
+
+.panel.with-nav-tabs .panel-heading{
+    padding: 5px 5px 0 5px;
+}
+.panel.with-nav-tabs .nav-tabs{
+	border-bottom: none;
+}
+.panel.with-nav-tabs .nav-justified{
+	margin-bottom: -1px;
+}
+
+
+#notify-box {
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    margin: 0;
+    /*padding: 10px;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid #CFE3DC;*/
+    text-align: center;
+    width: 250px;
+}
+
+#results-dropdown{
+    min-width: 500px;
+    padding: 14px 14px 0;
+    overflow:hidden;
+    background-color:rgba(235,235,235,1);
+    text-align: center;
+}
+
+/*
+*/
+
+
+.user-card {
+  background-color: white;
+  padding: 15px;
+  box-shadow: 9px 9px 9px -10px rgba(0, 0, 0, 1);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.separator {
+  border-right: 1px solid #aaaaaa;
+}
+
+.custom-section {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.repo-card {
+  background-color: white;
+  padding: 15px;
+  box-shadow: 0px 0px 5px -3px rgba(0, 0, 0, 1);
+  text-align: center;
+}
+
+.sts_item {
+  padding: 2px;
+  margin: 0 0 10 10;
+}

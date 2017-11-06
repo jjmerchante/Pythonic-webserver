@@ -1,0 +1,230 @@
+{% extends "base.html" %}
+
+{% block header %}
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand page-scroll" href="#page-top">Pythonic <small>ALPHA</small></a>
+        </div>
+
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown" role="presentation">
+                    <a href="#" class="dropdown-toggle" id="drop-results" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        Results <span class="caret"></span>
+                    </a>
+                    <div class="dropdown-menu" id="results-dropdown" aria-labelledby="drop-results">
+                        <div class="row">
+   							<div class="col-md-6">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingTwo">
+                                        <h4 class="panel-title">
+                                            Results of a user
+                                        </h4>
+                                    </div>
+                                    <div class="panel-body">
+                                        <form id="user-form-search">
+                                            <div class="form-group">
+                                                <label for="username">Username</label>
+                                                <input type="text" class="form-control" name="username" value="" id="name-user">
+                                            </div>
+                                            <button type="submit" class="btn btn-primary" id="btn-results-user">Results</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingThree">
+                                        <h4 class="panel-title">
+                                        Results of a repository
+                                        </h4>
+                                    </div>
+                                    <div class="panel-body">
+                                        <form id="repo-form-search">
+                                            <div class="form-group">
+                                                <label for="username">Username</label>
+                                                <input type="text" class="form-control" name="username" value="" id="name-user-repo">
+                                                <label for="project">Repository</label>
+                                                <input type="text" class="form-control" name="repository" value="" id="name-repo">
+                                            </div>
+                                            <button type="submit" class="btn btn-primary" id="btn-results-repo">Results</button>
+                                        </form>
+                                    </div>
+                                </div>
+   							</div>
+       					 </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="/feedback">Feedback</a>
+                </li>
+                <!--<li>
+                    <a class="page-scroll" href="#about">About</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#results">Results</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#portfolio">Portfolio</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#contact">Contact</a>
+                </li>-->
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+{% endblock %}
+{% block content %}
+<header>
+    <div class="alert alert-info feedback-alert" role="alert" >
+        This website is in <strong>alpha</strong> version, your feedback is welcome
+    </div>
+    <div class="header-content">
+        <div class="header-content-inner">
+            <h1 id="homeHeading">Analyze your Python projects</h1>
+            <hr>
+            <p>Welcome to the Pythonic website, analyze your projects and learn to write idiomatic Python code</p>
+            <!--<a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a>-->
+            <!--<p>https://github.com/jjmerchante/Pythonic.git</p>-->
+            <!--<p>https://github.com/gregoriorobles/bestfork.git</p>-->
+            <form class="form-horizontal" action="/analyze-repo/" method="POST" id="analyze-repo-form">
+                {% csrf_token %}
+                <label class="control-label">GitHub project</label>
+                <div class="form-group">
+                    <div class="col-sm-6 col-sm-offset-3">
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1">
+                                <i class="fa fa-github" aria-hidden="true"></i>
+                            </span>
+                            <input type="text" class="form-control" id="url-project" placeholder="https://github.com/user/repository.git">
+                        </div>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                        <input type="checkbox" id="only-modified-check" checked=""> Ignore files that haven't been modified
+                      </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-xl analyze-repo-btn">
+                    Analyze it!
+                </button>
+                <!--<input type="submit" value="Analyze it!" class="btn btn-primary btn-xl">-->
+            </form>
+            <form class="form-horizontal" action="/repos-user/" method="GET" id="repos-user-form">
+                {% csrf_token %}
+                <label class="control-label">GitHub username</label>
+                <div class="form-group">
+                    <div class="col-sm-6 col-sm-offset-3">
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1">
+                                <i class="fa fa-github" aria-hidden="true"></i>
+                            </span>
+                            <input type="text" class="form-control" name="username-gh" id="username-gh" placeholder="GitHub user">
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-xl" id="repos-user-btn">
+                    Analyze my repositories
+                </button>
+                <!--<input type="submit" value="Analyze it!" class="btn btn-primary btn-xl">-->
+            </form>
+            <br>
+            <!--<div class="progress analyze-progress" hidden="">
+                <div class="progress-bar progress-bar-striped active" id="progress-bar" role="progressbar" style="width: 0%">
+                    0%
+                </div>
+            </div>-->
+        </div>
+    </div>
+</header>
+
+<section id="user-repos" hidden="">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Select your python repositories</h2>
+                <hr class="primary">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <table class="table" id="table-repos-user">
+                <thead>
+                    <tr>
+                        <th>Select</th>
+                        <th>Name</th>
+                        <th>Forked</th>
+                        <th>Main language</th>
+                        <th>Link</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3 text-center">
+                <h4 class="section-heading">Are there missing repositories you contributed to?</h4>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1">
+                                    <i class="fa fa-github" aria-hidden="true"></i>
+                                </span>
+                        <input type="text" class="form-control" id="url-project-contrib" placeholder="https://github.com/user/repository.git">
+                    </div>
+                </div>
+                <button class="btn btn-primary" id="add-project-contrib">
+                    Add repository
+                </button>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3 text-center">
+        <!--        <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1">
+                            <i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>
+                        </span>
+                        <input type="text" id="email-notify" class="form-control" placeholder="Write your email if you want to be notified">
+                    </div>
+                </div>-->
+                <button type="submit" class="btn btn-primary btn-xl" id="analyze-repos-user-btn">
+                    Analyze the selected repositories!
+                </button>
+            </div>
+        </div>
+    </div>
+    <br>
+</section>
+
+<div id="modal-errors" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title"></h4>
+      </div>
+      <div class="modal-body">
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+{% endblock %}
+
+{% block js %}
+    <script src="/static/js/analyzer.js" charset="utf-8"></script>
+{% endblock %}

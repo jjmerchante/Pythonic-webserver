@@ -1,0 +1,1 @@
+Search.setIndex({docnames:["indexidioms"],envversion:52,filenames:["indexidioms.rst"],objects:{},objnames:{},objtypes:{},terms:{index:0,modul:0,page:0,search:0},titles:["Welcome to idiomsdoc\u2019s documentation!"],titleterms:{document:0,idiomsdoc:0,indic:0,tabl:0,welcom:0}})

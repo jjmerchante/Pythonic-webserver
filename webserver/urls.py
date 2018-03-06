@@ -29,4 +29,5 @@ urlpatterns = [
     url(r'^status', views.get_status, name='get_status'),
     url(r'^repository/(.+)/(.+)$', views.show_results_repo, name='show_results_repo'),
     url(r'^user/(.+)$', views.show_results_user, name='show_results_user'),
+    url(r'^idioms$', views.info_idioms, name='info_idioms'),
 ]

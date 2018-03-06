@@ -46,6 +46,12 @@ def feedback(request):
     else:
         return HttpResponseBadRequest("Bad request")
 
+def info_idioms(request):
+    """
+    Static information about all the idioms with examples
+    """
+    context = {}
+    return render(request, 'idioms.html', context)
 
 """  REPOSITORY ANALYSIS - REQUEST """
 

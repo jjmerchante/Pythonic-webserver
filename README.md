@@ -6,7 +6,7 @@ You can analyze Python projects or projects from a given user
 
 This project is still in development, it will be active on [pythonic.libresoft.info](pythonic.libresoft.info).
 
-Temporarily you can access in [pythonic.tk](pythonic.tk)
+Temporarily you can access in [pythonic.tk](pythonic.tk) OR [idiomaticpython.appspot.com](idiomaticpython.appspot.com)
 
 
 ## Installation

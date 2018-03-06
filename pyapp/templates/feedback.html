@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load app_filters %}
-
+{% load static %}
 
 {% block header %}
 <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
@@ -109,5 +109,5 @@
 {% endblock %}
 
 {% block js %}
-    <script src="/static/js/feedback.js" charset="utf-8"></script>
+    <script src="{% static 'js/feedback.js' %}" charset="utf-8"></script>
 {% endblock %}

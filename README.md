@@ -13,7 +13,7 @@ Temporarily you can access in [pythonic.tk](pythonic.tk)
 
 `pip install Django==1.11.6`
 
-`pip install pygments=2.2.0`
+`pip install pygments==2.2.0`
 
 ## Run
 ```

@@ -99,3 +99,6 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# django settings_secret
+webserver/settings_secret.py

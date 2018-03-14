@@ -191,3 +191,20 @@ body section {
   padding: 2px;
   margin: 0 0 10 10;
 }
+
+#filter-idioms {
+    width: 100%;
+    padding: 4px;
+    border: 1px solid rgba(200, 200, 200, 0.5);
+    margin-bottom: 10px;
+}
+
+#list-idioms {
+    max-height: 50vh;
+    overflow: auto;
+    border: solid 1px #b4b4b4;
+}
+
+.tag-filter {
+    cursor: pointer;
+}

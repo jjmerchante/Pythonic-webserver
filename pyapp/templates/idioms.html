@@ -1,8 +1,16 @@
 {% extends "base.html" %}
-
+{% load app_filters %}
 {% load static %}
 
+<!--
+Add new items:
+- Add in section idiom > list-group > idiom-item set a name, id, and category classes
+- Add a panel in section idioms in col-md-9(copy-paste) and modify the title panel, tags, and body.
+- Set the panel a id from the list ID: "ID-idiom"
+-->
+
 {% block header %}
+<link rel="stylesheet" href="/static/css/pygments.css">
 <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -23,7 +31,7 @@
                     </a>
                     <div class="dropdown-menu" id="results-dropdown" aria-labelledby="drop-results">
                         <div class="row">
-   							<div class="col-md-6">
+					                  <div class="col-md-6">
                                 <div class="panel panel-default">
                                     <div class="panel-heading" role="tab" id="headingTwo">
                                         <h4 class="panel-title">
@@ -60,8 +68,8 @@
                                         </form>
                                     </div>
                                 </div>
-   							</div>
-       					 </div>
+		                    </div>
+ 					    </div>
                     </div>
                 </li>
                 <li>
@@ -76,9 +84,147 @@
     </div>
     <!-- /.container-fluid -->
 </nav>
+{% endblock %}
 
 
+{% block content %}
+
+<section id="idioms">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">Idioms</h2>
+                    </div>
+                    <div class="panel-body">
+                        <input id="filter-idioms" type="text" name="" value="" placeholder="Find idioms">
+                        <div class="list-group" id="list-idioms">
+                            <a href="#" class="list-group-item idiom-item performance readability" id="listcomp">List comprehension</a>
+                            <a href="#" class="list-group-item idiom-item readability" id="decorator">Decorator</a>
+                            <a href="#" class="list-group-item idiom-item readability" id="magicmeth">Magic methods</a>
+
+                            <a href="#" class="list-group-item idiom-item">Porta ac consectetur ac</a>
+                            <a href="#" class="list-group-item idiom-item">Vestibulum at eros</a>
+                            <a href="#" class="list-group-item idiom-item">Porta ac consectetur ac</a>
+                            <a href="#" class="list-group-item idiom-item">Vestibulum at eros</a>
+                            <a href="#" class="list-group-item idiom-item">Porta ac consectetur ac</a>
+                            <a href="#" class="list-group-item idiom-item">Vestibulum at eros</a>
+                            <a href="#" class="list-group-item idiom-item">Porta ac consectetur ac</a>
+                            <a href="#" class="list-group-item idiom-item">Vestibulum at eros</a>
+                            <a href="#" class="list-group-item idiom-item">Porta ac consectetur ac</a>
+                            <a href="#" class="list-group-item idiom-item">Vestibulum at eros</a>
+                            <a href="#" class="list-group-item idiom-item">Porta ac consectetur ac</a>
+                            <a href="#" class="list-group-item idiom-item">Vestibulum at eros</a>
+                            <a href="#" class="list-group-item idiom-item">Porta ac consectetur ac</a>
+                            <a href="#" class="list-group-item idiom-item">Vestibulum at eros</a>
+                            <a href="#" class="list-group-item idiom-item">Porta ac consectetur ac</a>
+                            <a href="#" class="list-group-item idiom-item">Vestibulum at eros</a>
+                            <a href="#" class="list-group-item idiom-item">Porta ac consectetur ac</a>
+                            <a href="#" class="list-group-item idiom-item">Vestibulum at eros</a>
+                            <a href="#" class="list-group-item idiom-item">Porta ac consectetur ac</a>
+                            <a href="#" class="list-group-item idiom-item">Vestibulum at eros</a>
+                            <a href="#" class="list-group-item idiom-item">Porta ac consectetur ac</a>
+                            <a href="#" class="list-group-item idiom-item">Vestibulum at eros</a>
+                            <a href="#" class="list-group-item idiom-item">Porta ac consectetur ac</a>
+                            <a href="#" class="list-group-item idiom-item">Vestibulum at eros</a>
+                            <a href="#" class="list-group-item idiom-item">Porta ac consectetur ac</a>
+                            <a href="#" class="list-group-item idiom-item">Vestibulum at eros</a>
+                        </div>
+                        <h4>Tags</h4>
+                        <span class="label label-primary tag-filter">All</span>
+                        <span class="label label-default tag-filter">Readability</span>
+                        <span class="label label-default tag-filter">Performance</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-9">
+                <!-- BEGIN List comprehension -->
+                <div class="panel panel-primary idiom-panel" id="listcomp-idiom">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            List comprehensions
+                            <span class="label label-default">Readability</span>
+                            <span class="label label-default">Performance</span>
+                        </h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>Is an easy and elegant way to construct a list</p>
+                        {{ "idioms_examples/list_comprehension/listComprehension.py"| pygment_file|safe }}
+                        <p>It can improve the Readability:</p>
+                        {{ "idioms_examples/list_comprehension/listComprehension_2.py"| pygment_file|safe }}
+                        <p>And also the Performance:</p>
+                        {{ "idioms_examples/list_comprehension/listComprehension_perf.py"| pygment_file|safe }}
+                        <hr>
+                        <h4>References:</h4>
+                        <p>[1] <a href="https://www.python.org/dev/peps/pep-0202/">https://www.python.org/dev/peps/pep-0202/</a> </p>
+                    </div>
+                </div>
+                <!-- END List comprehension -->
+
+                <!-- BEGIN Decorators -->
+                <div class="panel panel-primary idiom-panel" id="decorator-idiom" hidden="">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            Decorators
+                            <span class="label label-default">Readability</span>
+                        </h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>A decorator is the name used for a software design pattern. Decorators dynamically alter the functionality of a function, method, or class without having to directly use subclasses or change the source code of the function being decorated. [1]</p>
+                        {{ "idioms_examples/decorator/decorator.py"| pygment_file|safe }}
+                        <hr>
+                        <h4>References:</h4>
+                        <p>[1] <a href=https://wiki.python.org/moin/PythonDecorators>https://wiki.python.org/moin/PythonDecorators</a></p>
+                    </div>
+                </div>
+                <!-- END Decorators -->
+
+
+                <!-- BEGIN Magic methods -->
+                <div class="panel panel-primary idiom-panel" id="magicmeth-idiom" hidden="">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            Magic methods
+                        </h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>Are special methods that can be invoked by special syntax [1]. For example:</p>
+                        {{ "idioms_examples/magic_methods/magic_methods.py"| pygment_file|safe }}
+                        <p>A complete list well documented can be found <a href="https://rszalski.github.io/magicmethods/">here</a></p>
+                        <hr>
+                        <h4>References:</h4>
+                        <p>[1] <a href="https://docs.python.org/3.3/reference/datamodel.html#special-method-names">https://docs.python.org/3.3/reference/datamodel.html#special-method-names</a> </p>
+                    </div>
+                </div>
+                <!-- END Decorators -->
+            </div>
+        </div>
+    </div>
+</section>
 
 {% endblock %}
-{% block content %} {% endblock %}
-{% block js %} {% endblock %}
+{% block js %}
+<script type="text/javascript">
+    $('#filter-idioms')
+    $('.idiom-item').click(function (ev) {
+        ev.preventDefault();
+        $('.idiom-panel').hide();
+        $("#" + $(this).attr("id") + "-idiom").show();
+    });
+    $('.tag-filter').click(function (ev) {
+        ev.preventDefault();
+        $('.tag-filter').removeClass('label-primary').addClass('label-default'); /*All to default*/
+        $(this).removeClass('label-default').addClass('label-primary'); /*this to primary*/
+
+        var tag = $(this).html().toLowerCase();
+        if (tag == "all") {
+            $('.idiom-item').show()
+        } else {
+            $('.idiom-item').hide()
+            $('.idiom-item.' + tag).show()
+        }
+    })
+</script>
+{% endblock %}

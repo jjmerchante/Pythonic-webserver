@@ -1,6 +1,7 @@
 from django import template
 import time
 
+
 register = template.Library()
 
 
@@ -17,3 +18,16 @@ def parse_repository(repo_url):
     repo_name = repo_url.split('/')[-1][:-4]
     user_name = repo_url.split('/')[-2]
     return user_name + '/' + repo_name
+
+@register.filter(name='pygment_file')
+def pygment_file(file):
+    from pygments import highlight
+    from pygments.lexers import PythonLexer
+    from pygments.formatters import HtmlFormatter
+    try:
+        with open(file, 'r') as f:
+            code = f.read()
+            return highlight(code, PythonLexer(), HtmlFormatter())
+    except IOError as e:
+        print e
+        return "<pre>INTERNAL ERROR: Cannot load the code</pre>"

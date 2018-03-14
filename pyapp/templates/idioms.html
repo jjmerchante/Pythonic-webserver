@@ -5,6 +5,7 @@
 <!--
 Add new items:
 - Add in section idiom > list-group > idiom-item set a name, id, and category classes
+- Set the same anchor as the id in order to get a "permanent" link
 - Add a panel in section idioms in col-md-9(copy-paste) and modify the title panel, tags, and body.
 - Set the panel a id from the list ID: "ID-idiom"
 -->
@@ -100,9 +101,9 @@ Add new items:
                     <div class="panel-body">
                         <input id="filter-idioms" type="text" name="" value="" placeholder="Find idioms">
                         <div class="list-group" id="list-idioms">
-                            <a href="#" class="list-group-item idiom-item performance readability" id="listcomp">List comprehension</a>
-                            <a href="#" class="list-group-item idiom-item readability" id="decorator">Decorator</a>
-                            <a href="#" class="list-group-item idiom-item readability" id="magicmeth">Magic methods</a>
+                            <a href="#list-comprehension" class="list-group-item idiom-item performance readability" id="list-comprehension">List comprehension</a>
+                            <a href="#decorator" class="list-group-item idiom-item readability" id="decorator">Decorator</a>
+                            <a href="#magic-methods" class="list-group-item idiom-item readability" id="magic-methods">Magic methods</a>
 
                             <a href="#" class="list-group-item idiom-item">Porta ac consectetur ac</a>
                             <a href="#" class="list-group-item idiom-item">Vestibulum at eros</a>
@@ -141,7 +142,7 @@ Add new items:
 
             <div class="col-md-9">
                 <!-- BEGIN List comprehension -->
-                <div class="panel panel-primary idiom-panel" id="listcomp-idiom">
+                <div class="panel panel-primary idiom-panel" id="list-comprehension-idiom">
                     <div class="panel-heading">
                         <h2 class="panel-title">
                             List comprehensions
@@ -183,15 +184,17 @@ Add new items:
 
 
                 <!-- BEGIN Magic methods -->
-                <div class="panel panel-primary idiom-panel" id="magicmeth-idiom" hidden="">
+                <div class="panel panel-primary idiom-panel" id="magic-methods-idiom" hidden="">
                     <div class="panel-heading">
                         <h2 class="panel-title">
                             Magic methods
+                            <span class="label label-default">Readability</span>
                         </h2>
                     </div>
                     <div class="panel-body">
                         <p>Are special methods that can be invoked by special syntax [1]. For example:</p>
                         {{ "idioms_examples/magic_methods/magic_methods.py"| pygment_file|safe }}
+                        <p>That code in Python2 could be improved with the use of the decorator functools.total_ordering</p>
                         <p>A complete list well documented can be found <a href="https://rszalski.github.io/magicmethods/">here</a></p>
                         <hr>
                         <h4>References:</h4>
@@ -209,7 +212,6 @@ Add new items:
 <script type="text/javascript">
     $('#filter-idioms')
     $('.idiom-item').click(function (ev) {
-        ev.preventDefault();
         $('.idiom-panel').hide();
         $("#" + $(this).attr("id") + "-idiom").show();
     });
@@ -225,6 +227,28 @@ Add new items:
             $('.idiom-item').hide()
             $('.idiom-item.' + tag).show()
         }
-    })
+    });
+    $(document).ready(function () {
+        var url = document.URL;
+        var idx = url.indexOf('#');
+        if (idx == -1) {
+            return
+        }
+        var idiom = url.substring(idx+1);
+        $('.idiom-panel').hide(); /*hide all panels*/
+        $("#" + idiom + "-idiom").show();
+    });
+    $('#filter-idioms').keyup(function (ev) {
+        var search = $(this).val();
+        var idioms = $('.idiom-item');
+        for (var i=0; i< idioms.length; i++){
+            if( $(idioms[i]).html().toLowerCase().includes(search) ) {
+                $(idioms[i]).show();
+            } else {
+                $(idioms[i]).hide();
+            }
+        }
+    });
+
 </script>
 {% endblock %}

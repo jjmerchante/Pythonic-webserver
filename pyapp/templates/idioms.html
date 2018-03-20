@@ -164,7 +164,7 @@ Add new items:
                 <!-- END List comprehension -->
 
                 <!-- BEGIN Decorators -->
-                <div class="panel panel-primary idiom-panel" id="decorator-idiom" hidden="">
+                <div class="panel panel-primary idiom-panel" id="decorator-idiom">
                     <div class="panel-heading">
                         <h2 class="panel-title">
                             Decorators
@@ -182,7 +182,7 @@ Add new items:
                 <!-- END Decorators -->
 
                 <!-- BEGIN Magic methods -->
-                <div class="panel panel-primary idiom-panel" id="magic-methods-idiom" hidden="">
+                <div class="panel panel-primary idiom-panel" id="magic-methods-idiom">
                     <div class="panel-heading">
                         <h2 class="panel-title">
                             Magic methods
@@ -304,7 +304,7 @@ Add new items:
 {% endblock %}
 {% block js %}
 <script type="text/javascript">
-    $('#filter-idioms')
+    /*$('#filter-idioms')*/
     $('.idiom-item').click(function (ev) {
         $('.idiom-panel').hide();
         $("#" + $(this).attr("id") + "-idiom").show();
@@ -323,13 +323,13 @@ Add new items:
         }
     });
     $(document).ready(function () {
+        $('.idiom-panel').hide(); /*hide all panels*/
         var url = document.URL;
         var idx = url.indexOf('#');
         if (idx == -1) {
             return
         }
         var idiom = url.substring(idx+1);
-        $('.idiom-panel').hide(); /*hide all panels*/
         $("#" + idiom + "-idiom").show();
     });
     $('#filter-idioms').keyup(function (ev) {

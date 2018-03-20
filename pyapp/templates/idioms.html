@@ -3,11 +3,29 @@
 {% load static %}
 
 <!--
+[General Instructions]
 Add new items:
 - Add in section idiom > list-group > idiom-item set a name, id, and category classes
 - Set the same anchor as the id in order to get a "permanent" link
-- Add a panel in section idioms in col-md-9(copy-paste) and modify the title panel, tags, and body.
-- Set the panel a id from the list ID: "ID-idiom"
+- Add a panel in section idioms in col-md-9(copy-paste template) and modify the title panel, tags, and body.
+- Set the panel a id from the list ID as: "ID-idiom"
+
+[Template]
+<div class="panel panel-primary idiom-panel" id="ID-IDIOM-idiom">
+    <div class="panel-heading">
+        <h2 class="panel-title">
+            NAME-IDIOM
+            <span class="label label-default">LABEL-IDIOM</span>
+        </h2>
+    </div>
+    <div class="panel-body">
+        <p>DESCRIPTION-IDIOM</p>
+        {{ "idioms_examples/FILE-CODE-IDIOM"| pygment_file|safe }}
+        <hr>
+        <h4>References:</h4>
+        <p>[1] LINK </p>
+    </div>
+</div>
 -->
 
 {% block header %}
@@ -93,6 +111,9 @@ Add new items:
 <section id="idioms">
     <div class="container">
         <div class="row">
+            <div class="alert alert-danger" role="alert">
+                ATTENTION: Work in progress
+            </div>
             <div class="col-md-3">
                 <div class="panel panel-primary">
                     <div class="panel-heading">
@@ -104,33 +125,11 @@ Add new items:
                             <a href="#list-comprehension" class="list-group-item idiom-item performance readability" id="list-comprehension">List comprehension</a>
                             <a href="#decorator" class="list-group-item idiom-item readability" id="decorator">Decorator</a>
                             <a href="#magic-methods" class="list-group-item idiom-item readability" id="magic-methods">Magic methods</a>
-
-                            <a href="#" class="list-group-item idiom-item">Porta ac consectetur ac</a>
-                            <a href="#" class="list-group-item idiom-item">Vestibulum at eros</a>
-                            <a href="#" class="list-group-item idiom-item">Porta ac consectetur ac</a>
-                            <a href="#" class="list-group-item idiom-item">Vestibulum at eros</a>
-                            <a href="#" class="list-group-item idiom-item">Porta ac consectetur ac</a>
-                            <a href="#" class="list-group-item idiom-item">Vestibulum at eros</a>
-                            <a href="#" class="list-group-item idiom-item">Porta ac consectetur ac</a>
-                            <a href="#" class="list-group-item idiom-item">Vestibulum at eros</a>
-                            <a href="#" class="list-group-item idiom-item">Porta ac consectetur ac</a>
-                            <a href="#" class="list-group-item idiom-item">Vestibulum at eros</a>
-                            <a href="#" class="list-group-item idiom-item">Porta ac consectetur ac</a>
-                            <a href="#" class="list-group-item idiom-item">Vestibulum at eros</a>
-                            <a href="#" class="list-group-item idiom-item">Porta ac consectetur ac</a>
-                            <a href="#" class="list-group-item idiom-item">Vestibulum at eros</a>
-                            <a href="#" class="list-group-item idiom-item">Porta ac consectetur ac</a>
-                            <a href="#" class="list-group-item idiom-item">Vestibulum at eros</a>
-                            <a href="#" class="list-group-item idiom-item">Porta ac consectetur ac</a>
-                            <a href="#" class="list-group-item idiom-item">Vestibulum at eros</a>
-                            <a href="#" class="list-group-item idiom-item">Porta ac consectetur ac</a>
-                            <a href="#" class="list-group-item idiom-item">Vestibulum at eros</a>
-                            <a href="#" class="list-group-item idiom-item">Porta ac consectetur ac</a>
-                            <a href="#" class="list-group-item idiom-item">Vestibulum at eros</a>
-                            <a href="#" class="list-group-item idiom-item">Porta ac consectetur ac</a>
-                            <a href="#" class="list-group-item idiom-item">Vestibulum at eros</a>
-                            <a href="#" class="list-group-item idiom-item">Porta ac consectetur ac</a>
-                            <a href="#" class="list-group-item idiom-item">Vestibulum at eros</a>
+                            <a href="#finally-block" class="list-group-item idiom-item readability" id="finally-block">Finally block</a>
+                            <a href="#with-statement" class="list-group-item idiom-item readability" id="with-statement">With statement</a>
+                            <a href="#generators" class="list-group-item idiom-item performance" id="generators">Generators</a>
+                            <a href="#yield-keyword" class="list-group-item idiom-item performance" id="yield-keyword">Yield</a>
+                            <a href="#generator-expressions" class="list-group-item idiom-item performance readability" id="generator-expressions">Generator expressions</a>
                         </div>
                         <h4>Tags</h4>
                         <span class="label label-primary tag-filter">All</span>
@@ -182,7 +181,6 @@ Add new items:
                 </div>
                 <!-- END Decorators -->
 
-
                 <!-- BEGIN Magic methods -->
                 <div class="panel panel-primary idiom-panel" id="magic-methods-idiom" hidden="">
                     <div class="panel-heading">
@@ -202,6 +200,102 @@ Add new items:
                     </div>
                 </div>
                 <!-- END Decorators -->
+
+                <!-- BEGIN Finally block -->
+                <div class="panel panel-primary idiom-panel" id="finally-block-idiom">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            Finally Block
+                            <span class="label label-default">Readability</span>
+                        </h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>Finally is a optional clause intended for cleaning-up actions. It is always executed before leaving the <em>try</em> statement. For example:</p>
+                        {{ "idioms_examples/finally_block/finally.py"| pygment_file|safe }}
+                        <hr>
+                        <h4>References:</h4>
+                        <p>[1] <a href="https://docs.python.org/2/tutorial/errors.html#defining-clean-up-actions">https://docs.python.org/2/tutorial/errors.html#defining-clean-up-actions</a> </p>
+                    </div>
+                </div>
+                <!-- END Finally block -->
+
+                <!-- BEGIN With statement -->
+                <div class="panel panel-primary idiom-panel" id="with-statement-idiom">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            With statement
+                            <span class="label label-default">Readability</span>
+                        </h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>The with statement allows you to execute two related operations as a pair, with a block of code in between [1]. Opening a file is the typical example. It opens the file in the <em>with</em> Statement and closes it when the block ends:</p>
+                        {{ "idioms_examples/with_statement/with.py"| pygment_file|safe }}
+                        <p>But there are more like threading.Lock for threads and you can define your owns context managers with the use of <em>__enter__</em> and <em>__exit__</em> methods in a class or with the use of contextlib library [2]. For example:</p>
+                        {{ "idioms_examples/with_statement/with_custom.py"| pygment_file|safe }}
+                        <hr>
+                        <h4>References:</h4>
+                        <p>[1] <a href="http://preshing.com/20110920/the-python-with-statement-by-example/">The <em>with</em> statement by example</a> </p>
+                        <p>[2] <a href="https://docs.python.org/3/library/contextlib.html">contextlib - Utilities for with-statements contexts</a> </p>
+                        <p>[3] <a href="https://www.python.org/dev/peps/pep-0343/">PEP 343 -- The "with" Statement</a> </p>
+                    </div>
+                </div>
+                <!-- END With statement -->
+
+                <!-- BEGIN Generators -->
+                <div class="panel panel-primary idiom-panel" id="generators-idiom">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            Generators
+                            <span class="label label-default">Performance</span>
+                        </h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>No description</p>
+                        {{ "idioms_examples/FILE-CODE-IDIOM"| pygment_file|safe }}
+                        <hr>
+                        <h4>References:</h4>
+                        <p>[1] No references  </p>
+                    </div>
+                </div>
+                <!-- END Generators -->
+
+                <!-- BEGIN Yield -->
+                <div class="panel panel-primary idiom-panel" id="yield-keyword-idiom">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            Yield
+                            <span class="label label-default">Performance</span>
+                        </h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>No description</p>
+                        {{ "idioms_examples/FILE-CODE-IDIOM"| pygment_file|safe }}
+                        <hr>
+                        <h4>References:</h4>
+                        <p>[1] No references </p>
+                    </div>
+                </div>
+                <!-- END Yield -->
+
+                <!-- BEGIN Generator expressions -->
+                <div class="panel panel-primary idiom-panel" id="generator-expressions-idiom">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            Generator Expressions
+                            <span class="label label-default">Performance</span>
+                        </h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>description</p>
+                        {{ "idioms_examples/FILE-CODE-IDIOM"| pygment_file|safe }}
+                        <hr>
+                        <h4>References:</h4>
+                        <p>[1] LINK </p>
+                    </div>
+                </div>
+                <!-- END Generator expressions  -->
+
+
             </div>
         </div>
     </div>

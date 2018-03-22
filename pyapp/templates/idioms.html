@@ -6,7 +6,7 @@
 [General Instructions]
 Add new items:
 - Add in section idiom > list-group > idiom-item set a name, id, and category classes
-- Set the same anchor as the id in order to get a "permanent" link
+- Set the same anchor as the id in order to get a "permanent" No references
 - Add a panel in section idioms in col-md-9(copy-paste template) and modify the title panel, tags, and body.
 - Set the panel a id from the list ID as: "ID-idiom"
 
@@ -111,9 +111,6 @@ Add new items:
 <section id="idioms">
     <div class="container">
         <div class="row">
-            <div class="alert alert-danger" role="alert">
-                ATTENTION: Work in progress
-            </div>
             <div class="col-md-3">
                 <div class="panel panel-primary">
                     <div class="panel-heading">
@@ -122,14 +119,26 @@ Add new items:
                     <div class="panel-body">
                         <input id="filter-idioms" type="text" name="" value="" placeholder="Find idioms">
                         <div class="list-group" id="list-idioms">
-                            <a href="#list-comprehension" class="list-group-item idiom-item performance readability" id="list-comprehension">List comprehension</a>
-                            <a href="#decorator" class="list-group-item idiom-item readability" id="decorator">Decorator</a>
-                            <a href="#magic-methods" class="list-group-item idiom-item readability" id="magic-methods">Magic methods</a>
-                            <a href="#finally-block" class="list-group-item idiom-item readability" id="finally-block">Finally block</a>
-                            <a href="#with-statement" class="list-group-item idiom-item readability" id="with-statement">With statement</a>
-                            <a href="#generators" class="list-group-item idiom-item performance" id="generators">Generators</a>
-                            <a href="#yield-keyword" class="list-group-item idiom-item performance" id="yield-keyword">Yield</a>
-                            <a href="#generator-expressions" class="list-group-item idiom-item performance readability" id="generator-expressions">Generator expressions</a>
+                            <a href="#list-comprehension" class="list-group-item idiom-item performance readability" id="list-comprehension"><b>List comprehension</b></a>
+                            <a href="#decorator" class="list-group-item idiom-item readability" id="decorator"><b>Decorator</b></a>
+                            <a href="#magic-methods" class="list-group-item idiom-item readability" id="magic-methods"><b>Magic methods</b></a>
+                            <a href="#finally-block" class="list-group-item idiom-item readability" id="finally-block"><b>Finally block</b></a>
+                            <a href="#with-statement" class="list-group-item idiom-item readability" id="with-statement"><b>With statement</b></a>
+                            <a href="#generators" class="list-group-item idiom-item performance" id="generators"><b>Generators</b></a>
+                            <a href="#yield-keyword" class="list-group-item idiom-item performance" id="yield-keyword"><b>Yield</b></a>
+                            <a href="#generator-expressions" class="list-group-item idiom-item performance readability" id="generator-expressions"><b>Generator expressions</b></a>
+                            <a href="#defaultdict" class="list-group-item idiom-item performance readability" id="defaultdict">collections.<b>defaultdict</b></a>
+                            <a href="#namedtuple" class="list-group-item idiom-item readability" id="namedtuple">collections.<b>namedtuple</b></a>
+                            <a href="#deque" class="list-group-item idiom-item readability performance" id="deque">collections.<b>deque</b></a>
+                            <a href="#classmethod-dec" class="list-group-item idiom-item readability" id="classmethod-dec"><b>@classmethod</b></a>
+                            <a href="#staticmethod-dec" class="list-group-item idiom-item readability" id="staticmethod-dec"><b>@staticmethod</b></a>
+                            <a href="#zip" class="list-group-item idiom-item readability performance" id="zip"><b>zip</b></a>
+                            <a href="#itertools-izip" class="list-group-item idiom-item readability performance" id="itertools-izip">itertools.<b>izip</b></a>
+                            <a href="#itertools-iziplong" class="list-group-item idiom-item readability performance" id="itertools-iziplong">itertools.<b>izip_longest</b></a>
+                            <a href="#itertools-starmap" class="list-group-item idiom-item" id="itertools-starmap">itertools.<b>starmap</b></a>
+                            <a href="#itertools-tee" class="list-group-item idiom-item" id="itertools-tee">itertools.<b>tee</b></a>
+                            <a href="#itertools-groupby" class="list-group-item idiom-item readability" id="itertools-groupby">itertools.<b>groupby</b></a>
+                            <a href="#functools-total_ordering" class="list-group-item idiom-item readability" id="functools-total_ordering">functools.<b>total_ordering</b></a>
                         </div>
                         <h4>Tags</h4>
                         <span class="label label-primary tag-filter">All</span>
@@ -177,6 +186,7 @@ Add new items:
                         <hr>
                         <h4>References:</h4>
                         <p>[1] <a href=https://wiki.python.org/moin/PythonDecorators>https://wiki.python.org/moin/PythonDecorators</a></p>
+                        <p>[2] <a href=https://www.python.org/dev/peps/pep-0318/>PEP 318 -- Decorators for Functions and Methods</a></p>
                     </div>
                 </div>
                 <!-- END Decorators -->
@@ -250,11 +260,19 @@ Add new items:
                         </h2>
                     </div>
                     <div class="panel-body">
-                        <p>No description</p>
-                        {{ "idioms_examples/FILE-CODE-IDIOM"| pygment_file|safe }}
+                        <p>Generator functions allow you to define a function that can be used as an iterator. For example:</p>
+                        {{ "idioms_examples/generators/generators_1.py"| pygment_file|safe }}
+                        <p>You can also define a generator class with the use of <em>__iter__</em> and <em>__next__</em> magic methods</p>
+                        <p>A concise way of making generators are generator expressions: <a href="/idioms#generator-expressions">Generator expressions</a> </p>
+                        <p>In the following example you can also see that can improve the performance because it doesn't build the full list in memory.</p>
+                        <p>For example:</p>
+                        {{ "idioms_examples/generators/generators_2.py"| pygment_file|safe }}
+                        <p>To fully understand generators, you should understand the keyword <b>yield</b></p>
                         <hr>
                         <h4>References:</h4>
-                        <p>[1] No references  </p>
+                        <p>[1] <a href="https://anandology.com/python-practice-book/iterators.html"> Iterators and Generators</a>  </p>
+                        <p>[2] <a href="https://wiki.python.org/moin/Generators"> Python Wiki - Generators</a>  </p>
+                        <p>[3] <a href="https://jeffknupp.com/blog/2013/04/07/improve-your-python-yield-and-generators-explained/"> Jeff Knupp - Yield and Generators</a>  </p>
                     </div>
                 </div>
                 <!-- END Generators -->
@@ -268,11 +286,13 @@ Add new items:
                         </h2>
                     </div>
                     <div class="panel-body">
-                        <p>No description</p>
-                        {{ "idioms_examples/FILE-CODE-IDIOM"| pygment_file|safe }}
+                        <p>The keyword <b>yield</b> allows you to write generators. It is used as a return statement, but when you run the funcion, it will just return a generator, the code won't run.</p>
+                        <p>Try to undertand the following example:</p>
+                        {{ "idioms_examples/yield/yield.py"| pygment_file|safe }}
                         <hr>
                         <h4>References:</h4>
-                        <p>[1] No references </p>
+                        <p>[1] <a href="https://www.python.org/dev/peps/pep-0255/">PEP 255 - Simple generators</a> </p>
+                        <p>[2] <a href="https://jeffknupp.com/blog/2013/04/07/improve-your-python-yield-and-generators-explained/"> Jeff Knupp - Yield and Generators</a>  </p>
                     </div>
                 </div>
                 <!-- END Yield -->
@@ -286,15 +306,249 @@ Add new items:
                         </h2>
                     </div>
                     <div class="panel-body">
-                        <p>description</p>
-                        {{ "idioms_examples/FILE-CODE-IDIOM"| pygment_file|safe }}
+                        <p>Generator expressions are a concise way to create generators. The syntax is the same as <b>list comprehensions</b> but are more memory efficient because don't store the whole list in memory</p>
+                        {{ "idioms_examples/generator_expr/generators.py"| pygment_file|safe }}
                         <hr>
                         <h4>References:</h4>
-                        <p>[1] LINK </p>
+                        <p>[1] <a href="https://www.python.org/dev/peps/pep-0289/">PEP 289 - Generator Expressions</a> </p>
                     </div>
                 </div>
                 <!-- END Generator expressions  -->
 
+                <!-- BEGIN defaultdict -->
+                <div class="panel panel-primary idiom-panel" id="defaultdict-idiom">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            collections.<b>defaultdict</b>
+                            <span class="label label-default">Performance</span>
+                            <span class="label label-default">Readability</span>
+                        </h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>defaultdict is a subclass of the built-in <em>dict</em> class. The functionality is the same as a dictionary. The powerful is that you can define a default value when the key is not found and it doesn't raise KeyError.</p>
+                        <p>For example, with <b>int</b> as default_factory </p>
+                        {{ "idioms_examples/defaultdict/defaultdict_int.py"| pygment_file|safe }}
+                        <p>With <b>list</b> as default_factory: </p>
+                        {{ "idioms_examples/defaultdict/defaultdict_list.py"| pygment_file|safe }}
+                        <p>You can use more default values as <b>set</b> or <b>dict</b> and also you can define your own constant function with the use of <b>itertools.repeat</b> [1]</p>
+                        <p><b>defaultdict</b> can improve the redability and the maintenance and sometimes the performance, but actually, the keyword <b>in</b> for checking a key in a dictionary is really fast</p>
+                        <hr>
+                        <h4>References:</h4>
+                        <p>[1] <a href="https://docs.python.org/2/library/collections.html#defaultdict-objects">docs.python.org - defaultdict objects</a> </p>
+                    </div>
+                </div>
+                <!-- END defaultdict -->
+
+                <!-- BEGIN namedtuple -->
+                <div class="panel panel-primary idiom-panel" id="namedtuple-idiom">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            collections.<b>namedtuple</b>
+                            <span class="label label-default">Readability</span>
+                        </h2>
+                    </div>
+                    <div class="panel-body">
+                        <p><b>namedTuple is a factory functions for creating tuples with fields that can be accessible by attribute lookup as well as being indexable and iterable [1]</b> They are useful for storing the results of some functions. For example, in the next case it returns a point, but you is not really readable:</p>
+                        {{ "idioms_examples/namedTuple/namedTuple_bad.py"| pygment_file|safe }}
+                        <p>You can also unpack the point with <code>x, y = get_point()</code>, but you get 2 variables and for multiple points it could be confusing. The alternative is the use of namedTuple:</p>
+                        {{ "idioms_examples/namedTuple/namedTuple_ok.py"| pygment_file|safe }}
+                        <p>It is more readable, easier to use and more maintainable</p>
+                        <hr>
+                        <h4>References:</h4>
+                        <p>[1] <a href="https://docs.python.org/2/library/collections.html#collections.namedtuple">docs.python.org - namedtuple</a></p>
+                    </div>
+                </div>
+                <!-- END namedtuple -->
+
+                <!-- BEGIN deque -->
+                <div class="panel panel-primary idiom-panel" id="deque-idiom">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            collections.<b>deque</b>
+                            <span class="label label-default">Performance</span>
+                            <span class="label label-default">Readability</span>
+                        </h2>
+                    </div>
+                    <div class="panel-body">
+                        <p><b>deque</b> (double-ended-queue) is a generalization of queues and stacks. It supports thread-safe and memory efficient, with approximately O(1) performance.</p>
+                        <p>One example of the use of deque methods is shown below:</p>
+                        {{ "idioms_examples/deque/deque.py"| pygment_file|safe }}
+                        <hr>
+                        <h4>References:</h4>
+                        <p>[1] <a href="https://docs.python.org/2/library/collections.html#deque-objects">docs.python.org - deque objects</a> </p>
+                    </div>
+                </div>
+                <!-- END deque -->
+
+                <!-- BEGIN classmethod-dec -->
+                <div class="panel panel-primary idiom-panel" id="classmethod-dec-idiom">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            @classmethod
+                            <span class="label label-default">Readability</span>
+                        </h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>A class method is the function that belongs to the class. It receives the class as first argument and doesn't need an instance of the class to be called. <b>@classmethod</b> is a function decorator for a class-method.</p>
+                        {{ "idioms_examples/classmethod/classmethod.py"| pygment_file|safe }}
+                        <hr>
+                        <h4>References:</h4>
+                        <p>[1] <a href="https://docs.python.org/2/library/functions.html#classmethod">docs.python.org - classmethod</a> </p>
+                    </div>
+                </div>
+                <!-- END classmethod-dec -->
+
+                <!-- BEGIN staticmethod-dec -->
+                <div class="panel panel-primary idiom-panel" id="staticmethod-dec-idiom">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            @staticmethod
+                            <span class="label label-default">Readability</span>
+                        </h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>A static method doesn't receive an implicit first argument, therefore that method "doesn't have" any reference to the class from inside. <b>@staticmethod</b> is a function decorator for a static-method.</p>
+                        {{ "idioms_examples/staticmethod/staticmethodDec.py"| pygment_file|safe }}
+                        <hr>
+                        <h4>References:</h4>
+                        <p>[1] <a href="https://docs.python.org/2/library/functions.html#staticmethod">docs.python.org - staticmethod</a> </p>
+                    </div>
+                </div>
+                <!-- END staticmethod-dec -->
+
+                <!-- BEGIN zip -->
+                <div class="panel panel-primary idiom-panel" id="zip-idiom">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            zip
+                            <span class="label label-default">readability</span>
+                            <span class="label label-default">performance</span>
+                       </h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>This built-in returns a list of tuples, where the i-th tuple contains the i-th element from each of the argument sequences or iterables [1].</p>
+                        {{"idioms_examples/zip/zip.py" | pygment_file|safe }}
+                        <hr>
+                        <h4>References:</h4>
+                        <p>[1] <a href="https://docs.python.org/2/library/functions.html#zip">docs.python.org - zip</a> </p>
+                    </div>
+                </div>
+                <!-- END zip -->
+
+                <!-- BEGIN itertools-izip -->
+                <div class="panel panel-primary idiom-panel" id="itertools-izip-idiom">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            itertools.<b>izip</b>
+                            <span class="label label-default">readability</span>
+                            <span class="label label-default">performance</span>
+                       </h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>This function is like zip, except that it returns an iterator instead of a list. Returns an iterator of tuples, where the i-th tuple contains the i-th element from each of the argument sequences or iterables</p>
+                        {{"idioms_examples/izip/izip.py"| pygment_file|safe}}
+                        Is also faster than zip. If we run the examples from zip and izip, we obtain the similar results multiple times:
+                        <pre>
+                            zip:  0.00105381011963
+                            izip: 0.00050616264343
+                        </pre>
+                        <hr>
+                        <h4>References:</h4>
+                        <p>[1] <a href="https://docs.python.org/2/library/itertools.html#itertools.izip">docs.python.org - izip</a> </p>
+                    </div>
+                </div>
+                <!-- END itertools-izip -->
+
+                <!-- BEGIN itertools-iziplong -->
+                <div class="panel panel-primary idiom-panel" id="itertools-iziplong-idiom">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            itertools.<b>izip_longest</b>
+                            <span class="label label-default">readability</span>
+                            <span class="label label-default">performance</span>
+                       </h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>This function is like izip, generate a iterator of tuples from each of the argument sequences. If any sequence is shorter, Generates a new iterator from all the iterables given. If any iterable is shorter, the last tuples are formed from the largest tuple and a default value giver or None.</p>
+                        <p>Better explained with one example:</p>
+                        {{"idioms_examples/izip_longest/iziplong.py"| pygment_file|safe}}
+                        <hr>
+                        <h4>References:</h4>
+                        <p>[1] <a href="https://docs.python.org/2/library/itertools.html#itertools.izip_longest">docs.python.org - izip</a> </p>
+                    </div>
+                </div>
+                <!-- END itertools-iziplong -->
+
+                <!-- BEGIN itertools-starmap -->
+                <div class="panel panel-primary idiom-panel" id="itertools-starmap-idiom">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            itertools.<b>starmap</b>
+                       </h2>
+                    </div>
+                    <div class="panel-body">
+                        <p> <b>starmap</b> is like map (cumputes a function using arguments obtained from iterable arguments), but the difference is that the iterable here is a tuple </p>
+                        <p> <code>map(func, iter1, iter2)</code> is similar to <code>starmap(func, map(iter1, iter2))</code> </p>
+                        {{"idioms_examples/starmap/starmap.py"| pygment_file|safe}}
+                        <hr>
+                        <h4>References:</h4>
+                        <p>[1] <a href="https://docs.python.org/3/library/itertools.html#itertools.starmap">docs.python.org - starmap</a> </p>
+                    </div>
+                </div>
+                <!-- END itertools-starmap -->
+
+                <!-- BEGIN itertools-tee -->
+                <div class="panel panel-primary idiom-panel" id="itertools-tee-idiom">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            itertools.<b>tee</b>
+                       </h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>This a useful function to return <em>n</em> independent iterators from a single iterator. Important: When a copy is made, the original iterator shouldn't be used because the copies could get advanced without the tee objects being informed</p>
+                        {{"idioms_examples/tee/tee.py"| pygment_file|safe}}
+                        <hr>
+                        <h4>References:</h4>
+                        <p>[1] <a href="https://docs.python.org/3/library/itertools.html#itertools.tee">docs.python.org - tee</a> </p>
+                    </div>
+                </div>
+                <!-- END itertools-tee -->
+
+                <!-- BEGIN itertools-groupby -->
+                <div class="panel panel-primary idiom-panel" id="itertools-groupby-idiom">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            itertools.<b>groupby</b>
+                            <span class="label label-default">readability</span>
+                       </h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>It is useful to group an interable given a function. For example:</p>
+                        {{"idioms_examples/group_by/group_by.py"| pygment_file|safe}}
+                        <hr>
+                        <h4>References:</h4>
+                        <p>[1] <a href="https://docs.python.org/3/library/itertools.html#itertools.groupby">docs.python.org - groupby</a> </p>
+                    </div>
+                </div>
+                <!-- END itertools-groupby -->
+
+                <!-- BEGIN functools-total_ordering -->
+                <div class="panel panel-primary idiom-panel" id="functools-total_ordering-idiom">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            functools.<b>@total_ordering</b>
+                            <span class="label label-default">readability</span>
+                       </h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>Given a class defining one comparison ordering methods (<em>>, <, >=, <=</em>) and <em>==</em> , this class decorator supplies the rest. </p>
+                        {{"idioms_examples/total_ordering/total_ordering.py"| pygment_file|safe}}
+                        <hr>
+                        <h4>References:</h4>
+                        <p>[1] <a href="https://docs.python.org/3/library/functools.html#functools.total_ordering">docs.python.org - @total_ordering</a> </p>
+                    </div>
+                </div>
+                <!-- END functools-total_ordering -->
 
             </div>
         </div>

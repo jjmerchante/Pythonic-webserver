@@ -120,16 +120,19 @@ Add new items:
                         <input id="filter-idioms" type="text" name="" value="" placeholder="Find idioms">
                         <div class="list-group" id="list-idioms">
                             <a href="#list-comprehension" class="list-group-item idiom-item performance readability" id="list-comprehension"><b>List comprehension</b></a>
+                            <a href="#dict-comprehension" class="list-group-item idiom-item performance readability" id="dict-comprehension"><b>Dict comprehension</b></a>
                             <a href="#decorator" class="list-group-item idiom-item readability" id="decorator"><b>Decorator</b></a>
                             <a href="#magic-methods" class="list-group-item idiom-item readability" id="magic-methods"><b>Magic methods</b></a>
                             <a href="#finally-block" class="list-group-item idiom-item readability" id="finally-block"><b>Finally block</b></a>
                             <a href="#with-statement" class="list-group-item idiom-item readability" id="with-statement"><b>With statement</b></a>
+                            <a href="#enumerate" class="list-group-item idiom-item readability" id="enumerate"><b>enumerate</b></a>
                             <a href="#generators" class="list-group-item idiom-item performance" id="generators"><b>Generators</b></a>
                             <a href="#yield-keyword" class="list-group-item idiom-item performance" id="yield-keyword"><b>Yield</b></a>
                             <a href="#generator-expressions" class="list-group-item idiom-item performance readability" id="generator-expressions"><b>Generator expressions</b></a>
                             <a href="#defaultdict" class="list-group-item idiom-item performance readability" id="defaultdict">collections.<b>defaultdict</b></a>
                             <a href="#namedtuple" class="list-group-item idiom-item readability" id="namedtuple">collections.<b>namedtuple</b></a>
                             <a href="#deque" class="list-group-item idiom-item readability performance" id="deque">collections.<b>deque</b></a>
+                            <a href="#counter" class="list-group-item idiom-item readability" id="counter">collections.<b>Counter</b></a>
                             <a href="#classmethod-dec" class="list-group-item idiom-item readability" id="classmethod-dec"><b>@classmethod</b></a>
                             <a href="#staticmethod-dec" class="list-group-item idiom-item readability" id="staticmethod-dec"><b>@staticmethod</b></a>
                             <a href="#zip" class="list-group-item idiom-item readability performance" id="zip"><b>zip</b></a>
@@ -171,6 +174,25 @@ Add new items:
                     </div>
                 </div>
                 <!-- END List comprehension -->
+
+                <!-- BEGIN Dict comprehension -->
+                <div class="panel panel-primary idiom-panel" id="dict-comprehension-idiom">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            Dict comprehensions
+                            <span class="label label-default">Readability</span>
+                            <span class="label label-default">Performance</span>
+                        </h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>Is an easy and elegant way to construct a dictionary</p>
+                        {{ "idioms_examples/dict_comprehension/dict_comprehension.py"| pygment_file|safe }}
+                        <hr>
+                        <h4>References:</h4>
+                        <p>[1] <a href="https://www.python.org/dev/peps/pep-0274/">PEP 274 - Dict Comprehensions</a> </p>
+                    </div>
+                </div>
+                <!-- END Dict comprehension -->
 
                 <!-- BEGIN Decorators -->
                 <div class="panel panel-primary idiom-panel" id="decorator-idiom">
@@ -250,6 +272,25 @@ Add new items:
                     </div>
                 </div>
                 <!-- END With statement -->
+
+                <!-- BEGIN enumerate -->
+                <div class="panel panel-primary idiom-panel" id="enumerate-idiom">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            enumerate
+                            <span class="label label-default">Readability</span>
+                        </h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>The built-in enumerate returns a enumerate object from an object that can be iterable. The next method, return a tuple containing a count (from 0 by default) and the the next value of the iterable object. It is useful when you need the index of the iterable. For example:</p>
+                        {{ "idioms_examples/enumerate/enumerate.py"| pygment_file|safe }}
+                        <hr>
+                        <h4>References:</h4>
+                        <p>[1] <a href="https://docs.python.org/2/library/functions.html#enumerate">docs.python.org - enumerate built-in</a> </p>
+                        <p>[2] <a href="https://www.python.org/dev/peps/pep-0279/">PEP 279 - The enumerate() built-in function</a> </p>
+                    </div>
+                </div>
+                <!-- END enumerate -->
 
                 <!-- BEGIN Generators -->
                 <div class="panel panel-primary idiom-panel" id="generators-idiom">
@@ -379,6 +420,24 @@ Add new items:
                     </div>
                 </div>
                 <!-- END deque -->
+
+                <!-- BEGIN counter -->
+                <div class="panel panel-primary idiom-panel" id="counter-idiom">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            collections.<b>Counter</b>
+                            <span class="label label-default">Readability</span>
+                        </h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>Counter is a dict subclass for counting objects. It supports 3 methods: <em>elements()</em>, <em>most_common([n])</em> and <em>substract([iterable-or-mapping])</em> </p>
+                        {{ "idioms_examples/counter/counter.py"| pygment_file|safe }}
+                        <hr>
+                        <h4>References:</h4>
+                        <p>[1] <a href="https://docs.python.org/2/library/collections.html#collections.Counter">docs.python.org - Counter</a> </p>
+                    </div>
+                </div>
+                <!-- END counter -->
 
                 <!-- BEGIN classmethod-dec -->
                 <div class="panel panel-primary idiom-panel" id="classmethod-dec-idiom">

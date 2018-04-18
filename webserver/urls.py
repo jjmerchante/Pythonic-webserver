@@ -30,4 +30,5 @@ urlpatterns = [
     url(r'^repository/(.+)/(.+)$', views.show_results_repo, name='show_results_repo'),
     url(r'^user/(.+)$', views.show_results_user, name='show_results_user'),
     url(r'^idioms$', views.info_idioms, name='info_idioms'),
+    url(r'^catalogue$', views.info_idioms, name='info_idioms'),
 ]

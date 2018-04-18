@@ -130,3 +130,6 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = settings_secret.email_pythonic
 EMAIL_HOST_PASSWORD = settings_secret.password_pythonic
 EMAIL_PORT = 587
+
+# Github key
+GITHUB_KEY = settings_secret.github_token

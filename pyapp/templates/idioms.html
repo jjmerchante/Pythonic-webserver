@@ -5,12 +5,14 @@
 <!--
 [General Instructions]
 Add new items:
-- Add in section idiom > list-group > idiom-item set a name, id, and category classes
+- Add in section idiom > list-group > idiom-item set a name, id, and category classes (one predefined)
 - Set the same anchor as the id in order to get a "permanent" No references
 - Add a panel in section idioms in col-md-9(copy-paste template) and modify the title panel, tags, and body.
 - Set the panel a id from the list ID as: "ID-idiom"
 
 [Template]
+<a href="#ID" class="list-group-item idiom-item LABELS" id="ID"><b>NAME</b></a>
+
 <div class="panel panel-primary idiom-panel" id="ID-IDIOM-idiom">
     <div class="panel-heading">
         <h2 class="panel-title">
@@ -142,6 +144,10 @@ Add new items:
                             <a href="#itertools-tee" class="list-group-item idiom-item" id="itertools-tee">itertools.<b>tee</b></a>
                             <a href="#itertools-groupby" class="list-group-item idiom-item readability" id="itertools-groupby">itertools.<b>groupby</b></a>
                             <a href="#functools-total_ordering" class="list-group-item idiom-item readability" id="functools-total_ordering">functools.<b>total_ordering</b></a>
+                            <a href="#lambda" class="list-group-item idiom-item readability" id="lambda"><b>lambda</b></a>
+                            <a href="#map" class="list-group-item idiom-item readability" id="map"><b>map</b></a>
+                            <a href="#filter" class="list-group-item idiom-item readability" id="filter"><b>filter</b></a>
+                            <a href="#reduce" class="list-group-item idiom-item readability" id="reduce"><b>reduce</b></a>
                         </div>
                         <h4>Tags</h4>
                         <span class="label label-primary tag-filter">All</span>
@@ -312,7 +318,7 @@ Add new items:
                         <p>Generator functions allow you to define a function that can be used as an iterator. For example:</p>
                         {{ "idioms_examples/generators/generators_1.py"| pygment_file|safe }}
                         <p>You can also define a generator class with the use of <em>__iter__</em> and <em>__next__</em> magic methods</p>
-                        <p>A concise way of making generators are generator expressions: <a href="/idioms#generator-expressions">Generator expressions</a> </p>
+                        <p>A concise way of making generators are generator expressions: <a href="/catalogue#generator-expressions">Generator expressions</a> </p>
                         <p>In the following example you can also see that can improve the performance because it doesn't build the full list in memory.</p>
                         <p>For example:</p>
                         {{ "idioms_examples/generators/generators_2.py"| pygment_file|safe }}
@@ -616,6 +622,97 @@ Add new items:
                     </div>
                 </div>
                 <!-- END functools-total_ordering -->
+
+                <!-- BEGIN map -->
+                <div class="panel panel-primary idiom-panel" id="map-idiom">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            map
+                            <span class="label label-default">Readability</span>
+                        </h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>Apply function to every item of iterable and return a list of the results. [1]</p>
+                        {{ "idioms_examples/map/map_def.py"| pygment_file|safe }}
+                        <h3>No Pythonic</h3>
+                        <p>In this case we can see a how to compute the square of a list of numbers</p>
+                        {{ "idioms_examples/map/map_bad.py"| pygment_file|safe }}
+                        <h3>Pythonic</h3>
+                        <p>A better way of doing that is with the use of map. In this case it applies a lambda function:</p>
+                        {{ "idioms_examples/map/map_ok.py"| pygment_file|safe }}
+                        <p>But the more pythonic way could be done with the use of <a href="/catalogue#list-comprehension">list comprehensions</a> in this case</p>
+                        <hr>
+                        <h4>References:</h4>
+                        <p>[1] <a href="https://docs.python.org/2/library/functions.html#map">docs.python.org - map</a> </p>
+                    </div>
+                </div>
+                <!-- END map -->
+
+                <!-- BEGIN filter -->
+                <div class="panel panel-primary idiom-panel" id="filter-idiom">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            filter
+                            <span class="label label-default">Readability</span>
+                        </h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>Construct a list from those elements of iterable for which function returns true. [1]</p>
+                        {{ "idioms_examples/filter/filter_def.py"| pygment_file|safe }}
+                        <h3>No Pythonic</h3>
+                        {{ "idioms_examples/filter/filter_bad.py"| pygment_file|safe }}
+                        <h3>Pythonic</h3>
+                        {{ "idioms_examples/filter/filter_ok.py"| pygment_file|safe }}
+                        <hr>
+                        <h4>References:</h4>
+                        <p>[1] <a href="https://docs.python.org/2/library/functions.html#filter">docs.python.org - filter</a> </p>
+                    </div>
+                </div>
+                <!-- END filter -->
+
+                <!-- BEGIN reduce -->
+                <div class="panel panel-primary idiom-panel" id="reduce-idiom">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            reduce
+                            <span class="label label-default">Readability</span>
+                        </h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>Apply function of two arguments cumulatively to the items of iterable, from left to right, so as to reduce the iterable to a single value. [1]</p>
+                        {{ "idioms_examples/reduce/reduce_def.py"| pygment_file|safe }}
+                        <h3>No Pythonic</h3>
+                        {{ "idioms_examples/reduce/reduce_bad.py"| pygment_file|safe }}
+                        <h3>Pythonic</h3>
+                        {{ "idioms_examples/reduce/reduce_ok.py"| pygment_file|safe }}
+
+                        <hr>
+                        <h4>References:</h4>
+                        <p>[1] <a href="https://docs.python.org/2/library/functions.html#reduce">docs.python.org - reduce</a> </p>
+                    </div>
+                </div>
+                <!-- END reduce -->
+
+                <!-- BEGIN lambda -->
+                <div class="panel panel-primary idiom-panel" id="lambda-idiom">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            lambda
+                            <span class="label label-default">Readability</span>
+                        </h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>lambda is a keyword of Python that allows to construct anonymus functions in one line</p>
+                        <p>The simpliest example can be shown below:</p>
+                        {{ "idioms_examples/lambda/lambda_def.py"| pygment_file|safe }}
+                        <p>But it can be applied to map, filter and reduce. Or other functions:</p>
+                        {{ "idioms_examples/lambda/lambda_sort.py"| pygment_file|safe }}
+                        <hr>
+                        <h4>References:</h4>
+                        <p>[1] <a href="https://docs.python.org/3/tutorial/controlflow.html#lambda-expressions">docs.python.org - lambda</a> </p>
+                    </div>
+                </div>
+                <!-- END lambda -->
 
             </div>
         </div>

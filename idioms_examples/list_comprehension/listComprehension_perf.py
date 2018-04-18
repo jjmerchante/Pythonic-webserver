@@ -1,2 +1,4 @@
-list_a 0.655946016312 seconds
-list_b 0.255126953125 seconds
+# No pythonic
+0.655946016312 seconds
+# Pythonic
+0.255126953125 seconds

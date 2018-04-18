@@ -162,11 +162,13 @@ Add new items:
                         </h2>
                     </div>
                     <div class="panel-body">
-                        <p>Is an easy and elegant way to construct a list</p>
+                        <p>Is an easy and elegant way to construct a list and it can improve the readability</p>
                         {{ "idioms_examples/list_comprehension/listComprehension.py"| pygment_file|safe }}
-                        <p>It can improve the Readability:</p>
-                        {{ "idioms_examples/list_comprehension/listComprehension_2.py"| pygment_file|safe }}
-                        <p>And also the Performance:</p>
+                        <h3>No Pythonic</h3>
+                        {{ "idioms_examples/list_comprehension/bad.py"| pygment_file|safe }}
+                        <h3>Pythonic way</h3>
+                        {{ "idioms_examples/list_comprehension/good.py"| pygment_file|safe }}
+                        <p>It is more readable and also improve the performance:</p>
                         {{ "idioms_examples/list_comprehension/listComprehension_perf.py"| pygment_file|safe }}
                         <hr>
                         <h4>References:</h4>
@@ -185,8 +187,14 @@ Add new items:
                         </h2>
                     </div>
                     <div class="panel-body">
-                        <p>Is an easy and elegant way to construct a dictionary</p>
+                        <p>Is an easy and elegant way to construct a dictionary. Is a similar case as <em>list comprehensions</em> </p>
                         {{ "idioms_examples/dict_comprehension/dict_comprehension.py"| pygment_file|safe }}
+                        <h3>No Pythonic</h3>
+                        {{ "idioms_examples/dict_comprehension/bad.py"| pygment_file|safe }}
+                        <h3>Pythonic way</h3>
+                        {{ "idioms_examples/dict_comprehension/good.py"| pygment_file|safe }}
+                        <p>It is more readable and also improve the performance:</p>
+                        {{ "idioms_examples/dict_comprehension/results_performance.py"| pygment_file|safe }}
                         <hr>
                         <h4>References:</h4>
                         <p>[1] <a href="https://www.python.org/dev/peps/pep-0274/">PEP 274 - Dict Comprehensions</a> </p>

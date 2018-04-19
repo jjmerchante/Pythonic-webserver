@@ -8,4 +8,4 @@ def get_point():
     return point(x, y)
 
 point = get_point()
-print point.x, point.y # better
+print(point.x, point.y) # better

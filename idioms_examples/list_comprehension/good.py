@@ -1,1 +1,1 @@
-result_list = [el for el in xrange(10000000)]
+result_list = [el for el in range(10000000)]

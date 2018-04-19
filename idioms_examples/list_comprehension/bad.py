@@ -1,3 +1,3 @@
 result_list = []
-for el in xrange(10000000):
+for el in range(10000000):
     result_list.append(el)

@@ -5,4 +5,4 @@ def get_point():
     return x, y
 
 point = get_point()
-print point[0], point[1] # not readable
+print(point[0], point[1]) # not readable

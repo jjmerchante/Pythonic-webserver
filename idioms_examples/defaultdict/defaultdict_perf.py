@@ -7,7 +7,7 @@ def time_dec(func):
     def wrap(*arg, **kwargs):
         init_time = time.time()
         res = func(*arg, **kwargs)
-        print func.__name__, time.time()-init_time
+        print(func.__name__, time.time()-init_time)
         return res
     return wrap
 

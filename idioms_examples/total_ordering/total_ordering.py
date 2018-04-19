@@ -15,8 +15,8 @@ class Rectangle():
 r1 = Rectangle(3,6)
 r2 = Rectangle(3,5)
 
-print r1 > r2 # True
-print r1 < r2 # False
-print r1 >= r2 # True
-print r1 <= r2 # False
-print r1 == r2 # False
+print(r1 > r2) # True
+print(r1 < r2) # False
+print(r1 >= r2) # True
+print(r1 <= r2) # False
+print(r1 == r2) # False

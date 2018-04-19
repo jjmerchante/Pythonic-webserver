@@ -6,13 +6,13 @@ def fib():
        a, b = b, a + b
 
 f = fib()
-print f  # <generator object fib at 0x7f72dce25870>
+print(f)  # <generator object fib at 0x7f72dce25870>
 
-print f.next() # 1
-print f.next() # 1
-print f.next() # 2
+print(f.next()) # 1
+print(f.next()) # 1
+print(f.next()) # 2
 for i in f:
-    print i
+    print(i)
 
 # 3
 # 5

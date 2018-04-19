@@ -138,16 +138,21 @@ Add new items:
                             <a href="#classmethod-dec" class="list-group-item idiom-item readability" id="classmethod-dec"><b>@classmethod</b></a>
                             <a href="#staticmethod-dec" class="list-group-item idiom-item readability" id="staticmethod-dec"><b>@staticmethod</b></a>
                             <a href="#zip" class="list-group-item idiom-item readability performance" id="zip"><b>zip</b></a>
-                            <a href="#itertools-izip" class="list-group-item idiom-item readability performance" id="itertools-izip">itertools.<b>izip</b></a>
+                            <a href="#itertools" class="list-group-item idiom-item readability performance" id="itertools"><b>itertools</b></a>
+
+                            <!--<a href="#itertools-izip" class="list-group-item idiom-item readability performance" id="itertools-izip">itertools.<b>izip</b></a>
                             <a href="#itertools-iziplong" class="list-group-item idiom-item readability performance" id="itertools-iziplong">itertools.<b>izip_longest</b></a>
                             <a href="#itertools-starmap" class="list-group-item idiom-item" id="itertools-starmap">itertools.<b>starmap</b></a>
                             <a href="#itertools-tee" class="list-group-item idiom-item" id="itertools-tee">itertools.<b>tee</b></a>
-                            <a href="#itertools-groupby" class="list-group-item idiom-item readability" id="itertools-groupby">itertools.<b>groupby</b></a>
+                            <a href="#itertools-groupby" class="list-group-item idiom-item readability" id="itertools-groupby">itertools.<b>groupby</b></a>-->
                             <a href="#functools-total_ordering" class="list-group-item idiom-item readability" id="functools-total_ordering">functools.<b>total_ordering</b></a>
+                            <a href="#dict" class="list-group-item idiom-item readability performance" id="dict"><b>dictionaries</b></a>
                             <a href="#lambda" class="list-group-item idiom-item readability" id="lambda"><b>lambda</b></a>
-                            <a href="#map" class="list-group-item idiom-item readability" id="map"><b>map</b></a>
+                            <a href="#seq-op" class="list-group-item idiom-item performance" id="seq-op"><b>* and + for sequences</b></a>
+                            <a href="#str-op" class="list-group-item idiom-item performance" id="str-op"><b>Pythonic operations over strings</b></a>
+                            <!--<a href="#map" class="list-group-item idiom-item readability" id="map"><b>map</b></a>
                             <a href="#filter" class="list-group-item idiom-item readability" id="filter"><b>filter</b></a>
-                            <a href="#reduce" class="list-group-item idiom-item readability" id="reduce"><b>reduce</b></a>
+                            <a href="#reduce" class="list-group-item idiom-item readability" id="reduce"><b>reduce</b></a>-->
                         </div>
                         <h4>Tags</h4>
                         <span class="label label-primary tag-filter">All</span>
@@ -178,7 +183,7 @@ Add new items:
                         {{ "idioms_examples/list_comprehension/listComprehension_perf.py"| pygment_file|safe }}
                         <hr>
                         <h4>References:</h4>
-                        <p>[1] <a href="https://www.python.org/dev/peps/pep-0202/">https://www.python.org/dev/peps/pep-0202/</a> </p>
+                        <p>[1] <a href="https://www.python.org/dev/peps/pep-0202/">PEP 202 -  List Comprehensions</a> </p>
                     </div>
                 </div>
                 <!-- END List comprehension -->
@@ -242,7 +247,7 @@ Add new items:
                         <p>A complete list well documented can be found <a href="https://rszalski.github.io/magicmethods/">here</a></p>
                         <hr>
                         <h4>References:</h4>
-                        <p>[1] <a href="https://docs.python.org/3.3/reference/datamodel.html#special-method-names">https://docs.python.org/3.3/reference/datamodel.html#special-method-names</a> </p>
+                        <p>[1] <a href="https://docs.python.org/3.3/reference/datamodel.html#special-method-names">docs.python.org - Special Method Names</a> </p>
                     </div>
                 </div>
                 <!-- END Decorators -->
@@ -260,7 +265,7 @@ Add new items:
                         {{ "idioms_examples/finally_block/finally.py"| pygment_file|safe }}
                         <hr>
                         <h4>References:</h4>
-                        <p>[1] <a href="https://docs.python.org/2/tutorial/errors.html#defining-clean-up-actions">https://docs.python.org/2/tutorial/errors.html#defining-clean-up-actions</a> </p>
+                        <p>[1] <a href="https://docs.python.org/3/tutorial/errors.html#defining-clean-up-actions">docs.python.org - Defining clean up actions</a> </p>
                     </div>
                 </div>
                 <!-- END Finally block -->
@@ -300,7 +305,7 @@ Add new items:
                         {{ "idioms_examples/enumerate/enumerate.py"| pygment_file|safe }}
                         <hr>
                         <h4>References:</h4>
-                        <p>[1] <a href="https://docs.python.org/2/library/functions.html#enumerate">docs.python.org - enumerate built-in</a> </p>
+                        <p>[1] <a href="https://docs.python.org/3/library/functions.html#enumerate">docs.python.org - enumerate built-in</a> </p>
                         <p>[2] <a href="https://www.python.org/dev/peps/pep-0279/">PEP 279 - The enumerate() built-in function</a> </p>
                     </div>
                 </div>
@@ -389,7 +394,7 @@ Add new items:
                         <p><b>defaultdict</b> can improve the redability and the maintenance and sometimes the performance, but actually, the keyword <b>in</b> for checking a key in a dictionary is really fast</p>
                         <hr>
                         <h4>References:</h4>
-                        <p>[1] <a href="https://docs.python.org/2/library/collections.html#defaultdict-objects">docs.python.org - defaultdict objects</a> </p>
+                        <p>[1] <a href="https://docs.python.org/3/library/collections.html#defaultdict-objects">docs.python.org - defaultdict objects</a> </p>
                     </div>
                 </div>
                 <!-- END defaultdict -->
@@ -410,7 +415,7 @@ Add new items:
                         <p>It is more readable, easier to use and more maintainable</p>
                         <hr>
                         <h4>References:</h4>
-                        <p>[1] <a href="https://docs.python.org/2/library/collections.html#collections.namedtuple">docs.python.org - namedtuple</a></p>
+                        <p>[1] <a href="https://docs.python.org/3/library/collections.html#collections.namedtuple">docs.python.org - namedtuple</a></p>
                     </div>
                 </div>
                 <!-- END namedtuple -->
@@ -430,7 +435,7 @@ Add new items:
                         {{ "idioms_examples/deque/deque.py"| pygment_file|safe }}
                         <hr>
                         <h4>References:</h4>
-                        <p>[1] <a href="https://docs.python.org/2/library/collections.html#deque-objects">docs.python.org - deque objects</a> </p>
+                        <p>[1] <a href="https://docs.python.org/3/library/collections.html#deque-objects">docs.python.org - deque objects</a> </p>
                     </div>
                 </div>
                 <!-- END deque -->
@@ -448,7 +453,7 @@ Add new items:
                         {{ "idioms_examples/counter/counter.py"| pygment_file|safe }}
                         <hr>
                         <h4>References:</h4>
-                        <p>[1] <a href="https://docs.python.org/2/library/collections.html#collections.Counter">docs.python.org - Counter</a> </p>
+                        <p>[1] <a href="https://docs.python.org/3/library/collections.html#collections.Counter">docs.python.org - Counter</a> </p>
                     </div>
                 </div>
                 <!-- END counter -->
@@ -466,7 +471,7 @@ Add new items:
                         {{ "idioms_examples/classmethod/classmethod.py"| pygment_file|safe }}
                         <hr>
                         <h4>References:</h4>
-                        <p>[1] <a href="https://docs.python.org/2/library/functions.html#classmethod">docs.python.org - classmethod</a> </p>
+                        <p>[1] <a href="https://docs.python.org/3/library/functions.html#classmethod">docs.python.org - classmethod</a> </p>
                     </div>
                 </div>
                 <!-- END classmethod-dec -->
@@ -484,7 +489,7 @@ Add new items:
                         {{ "idioms_examples/staticmethod/staticmethodDec.py"| pygment_file|safe }}
                         <hr>
                         <h4>References:</h4>
-                        <p>[1] <a href="https://docs.python.org/2/library/functions.html#staticmethod">docs.python.org - staticmethod</a> </p>
+                        <p>[1] <a href="https://docs.python.org/3/library/functions.html#staticmethod">docs.python.org - staticmethod</a> </p>
                     </div>
                 </div>
                 <!-- END staticmethod-dec -->
@@ -499,16 +504,57 @@ Add new items:
                        </h2>
                     </div>
                     <div class="panel-body">
-                        <p>This built-in returns a list of tuples, where the i-th tuple contains the i-th element from each of the argument sequences or iterables [1].</p>
+                        <p>This built-in returns a generator of tuples, where the i-th tuple contains the i-th element from each of the argument sequences or iterables [1].</p>
                         {{"idioms_examples/zip/zip.py" | pygment_file|safe }}
                         <hr>
                         <h4>References:</h4>
-                        <p>[1] <a href="https://docs.python.org/2/library/functions.html#zip">docs.python.org - zip</a> </p>
+                        <p>[1] <a href="https://docs.python.org/3/library/functions.html#zip">docs.python.org - zip</a> </p>
                     </div>
                 </div>
                 <!-- END zip -->
 
-                <!-- BEGIN itertools-izip -->
+
+                <!-- BEGIN itertools -->
+                <div class="panel panel-primary idiom-panel" id="itertools-idiom">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            <b>itertools</b>
+                            <span class="label label-default">readability</span>
+                            <span class="label label-default">performance</span>
+                       </h2>
+                    </div>
+                    <div class="panel-body">
+                        <h3>iziplong</h3>
+                        <p>This function is like zip, generate a iterator of tuples from each of the argument sequences. If any sequence is shorter, Generates a new iterator from all the iterables given. If any iterable is shorter, the last tuples are formed from the largest tuple and a default value giver or None.</p>
+                        <p>Better explained with one example:</p>
+                        {{"idioms_examples/izip_longest/iziplong.py"| pygment_file|safe}}
+
+                        <h3>starmap</h3>
+                        <p> <b>starmap</b> is like map (cumputes a function using arguments obtained from iterable arguments), but the difference is that the iterable here is a tuple </p>
+                        <p> <code>map(func, iter1, iter2)</code> is similar to <code>starmap(func, map(iter1, iter2))</code> </p>
+                        {{"idioms_examples/starmap/starmap.py"| pygment_file|safe}}
+
+                        <h3>tee</h3>
+                        <p>This a useful function to return <em>n</em> independent iterators from a single iterator. Important: When a copy is made, the original iterator shouldn't be used because the copies could get advanced without the tee objects being informed</p>
+                        {{"idioms_examples/tee/tee.py"| pygment_file|safe}}
+
+                        <h3>groupby</h3>
+                        <p>It is useful to group an interable given a function. For example:</p>
+                        {{"idioms_examples/group_by/group_by.py"| pygment_file|safe}}
+
+                        <hr>
+                        <h4>References:</h4>
+                        <p>[1] <a href="https://docs.python.org/3/library/itertools.html#itertools.izip_longest">docs.python.org - izip</a> </p>
+                        <p>[2] <a href="https://docs.python.org/3/library/itertools.html#itertools.starmap">docs.python.org - starmap</a> </p>
+                        <p>[3] <a href="https://docs.python.org/3/library/itertools.html#itertools.tee">docs.python.org - tee</a> </p>
+                        <p>[4] <a href="https://docs.python.org/3/library/itertools.html#itertools.groupby">docs.python.org - groupby</a> </p>
+
+
+                    </div>
+                </div>
+                <!-- END itertools -->
+
+                <!-- BEGIN itertools-izip
                 <div class="panel panel-primary idiom-panel" id="itertools-izip-idiom">
                     <div class="panel-heading">
                         <h2 class="panel-title">
@@ -530,80 +576,7 @@ Add new items:
                         <p>[1] <a href="https://docs.python.org/2/library/itertools.html#itertools.izip">docs.python.org - izip</a> </p>
                     </div>
                 </div>
-                <!-- END itertools-izip -->
-
-                <!-- BEGIN itertools-iziplong -->
-                <div class="panel panel-primary idiom-panel" id="itertools-iziplong-idiom">
-                    <div class="panel-heading">
-                        <h2 class="panel-title">
-                            itertools.<b>izip_longest</b>
-                            <span class="label label-default">readability</span>
-                            <span class="label label-default">performance</span>
-                       </h2>
-                    </div>
-                    <div class="panel-body">
-                        <p>This function is like izip, generate a iterator of tuples from each of the argument sequences. If any sequence is shorter, Generates a new iterator from all the iterables given. If any iterable is shorter, the last tuples are formed from the largest tuple and a default value giver or None.</p>
-                        <p>Better explained with one example:</p>
-                        {{"idioms_examples/izip_longest/iziplong.py"| pygment_file|safe}}
-                        <hr>
-                        <h4>References:</h4>
-                        <p>[1] <a href="https://docs.python.org/2/library/itertools.html#itertools.izip_longest">docs.python.org - izip</a> </p>
-                    </div>
-                </div>
-                <!-- END itertools-iziplong -->
-
-                <!-- BEGIN itertools-starmap -->
-                <div class="panel panel-primary idiom-panel" id="itertools-starmap-idiom">
-                    <div class="panel-heading">
-                        <h2 class="panel-title">
-                            itertools.<b>starmap</b>
-                       </h2>
-                    </div>
-                    <div class="panel-body">
-                        <p> <b>starmap</b> is like map (cumputes a function using arguments obtained from iterable arguments), but the difference is that the iterable here is a tuple </p>
-                        <p> <code>map(func, iter1, iter2)</code> is similar to <code>starmap(func, map(iter1, iter2))</code> </p>
-                        {{"idioms_examples/starmap/starmap.py"| pygment_file|safe}}
-                        <hr>
-                        <h4>References:</h4>
-                        <p>[1] <a href="https://docs.python.org/3/library/itertools.html#itertools.starmap">docs.python.org - starmap</a> </p>
-                    </div>
-                </div>
-                <!-- END itertools-starmap -->
-
-                <!-- BEGIN itertools-tee -->
-                <div class="panel panel-primary idiom-panel" id="itertools-tee-idiom">
-                    <div class="panel-heading">
-                        <h2 class="panel-title">
-                            itertools.<b>tee</b>
-                       </h2>
-                    </div>
-                    <div class="panel-body">
-                        <p>This a useful function to return <em>n</em> independent iterators from a single iterator. Important: When a copy is made, the original iterator shouldn't be used because the copies could get advanced without the tee objects being informed</p>
-                        {{"idioms_examples/tee/tee.py"| pygment_file|safe}}
-                        <hr>
-                        <h4>References:</h4>
-                        <p>[1] <a href="https://docs.python.org/3/library/itertools.html#itertools.tee">docs.python.org - tee</a> </p>
-                    </div>
-                </div>
-                <!-- END itertools-tee -->
-
-                <!-- BEGIN itertools-groupby -->
-                <div class="panel panel-primary idiom-panel" id="itertools-groupby-idiom">
-                    <div class="panel-heading">
-                        <h2 class="panel-title">
-                            itertools.<b>groupby</b>
-                            <span class="label label-default">readability</span>
-                       </h2>
-                    </div>
-                    <div class="panel-body">
-                        <p>It is useful to group an interable given a function. For example:</p>
-                        {{"idioms_examples/group_by/group_by.py"| pygment_file|safe}}
-                        <hr>
-                        <h4>References:</h4>
-                        <p>[1] <a href="https://docs.python.org/3/library/itertools.html#itertools.groupby">docs.python.org - groupby</a> </p>
-                    </div>
-                </div>
-                <!-- END itertools-groupby -->
+                END itertools-izip -->
 
                 <!-- BEGIN functools-total_ordering -->
                 <div class="panel panel-primary idiom-panel" id="functools-total_ordering-idiom">
@@ -643,7 +616,7 @@ Add new items:
                         <p>But the more pythonic way could be done with the use of <a href="/catalogue#list-comprehension">list comprehensions</a> in this case</p>
                         <hr>
                         <h4>References:</h4>
-                        <p>[1] <a href="https://docs.python.org/2/library/functions.html#map">docs.python.org - map</a> </p>
+                        <p>[1] <a href="https://docs.python.org/3/library/functions.html#map">docs.python.org - map</a> </p>
                     </div>
                 </div>
                 <!-- END map -->
@@ -665,7 +638,7 @@ Add new items:
                         {{ "idioms_examples/filter/filter_ok.py"| pygment_file|safe }}
                         <hr>
                         <h4>References:</h4>
-                        <p>[1] <a href="https://docs.python.org/2/library/functions.html#filter">docs.python.org - filter</a> </p>
+                        <p>[1] <a href="https://docs.python.org/3/library/functions.html#filter">docs.python.org - filter</a> </p>
                     </div>
                 </div>
                 <!-- END filter -->
@@ -713,6 +686,103 @@ Add new items:
                     </div>
                 </div>
                 <!-- END lambda -->
+
+                <!-- BEGIN dictionary -->
+                <div class="panel panel-primary idiom-panel" id="dict-idiom">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            dictionaries
+                            <span class="label label-default">Readability</span>
+                            <span class="label label-default">Performance</span>
+                        </h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>Dictionaries in Python are like objects in Java. This kind of structures allows you to store items indexed by a key. This structures are basic in Python, and could be very powerful if you know how to manage them.</p>
+                        <h3>Get a value.</h3>
+                        <p>There are multiple ways, but one idiomatic practice in Python is EAFP (it's Easier to Ask for Forgiveness than Permission). Jeff Knupp explain it in one of his articles [1]. Here we describe multiples examples:</p>
+                        <ul>
+                            <li>Catching the exception (EAFP):</li>
+                            {{ "idioms_examples/dictionaries/dict_catch.py"| pygment_file|safe }}
+
+                            <li>Look Before You Leap (LBYL): Opposite for the EAFP principle:</li>
+                            {{ "idioms_examples/dictionaries/dict_eafp.py"| pygment_file|safe }}
+
+                            <li>dict.get(key, default): Try to get the value and if does not exist, retrieve a default value</li>
+                            {{ "idioms_examples/dictionaries/dict_get.py"| pygment_file|safe }}
+                            <li><a href="#defaultdict">collections.defaultdict</a></li>
+                        </ul>
+
+                        <h3>Create a dictionary.</h3>
+                        <p>The default way could be with the use of <code>d = dict()</code> or <code>d = {}</code>, but it can be also accomplised with the use of dict comprehensions as we explain in other section:</p>
+                        {{ "idioms_examples/dict_comprehension/dict_comprehension.py"| pygment_file|safe }}
+
+                        <h3>Iterate over keys and values:</h3>
+                        <p>If you want a copy of the dictionary's list, you can use <code>dict.items()</code> and returns a list with (key, value) pairs.
+                        But if you want to iterate over the dictionary is better to use an iterator:</p>
+                        {{ "idioms_examples/dictionaries/dict_iter.py"| pygment_file|safe }}
+
+                        <hr>
+                        <h4>References:</h4>
+                        <p>[1] <a href="https://jeffknupp.com/blog/2013/02/06/write-cleaner-python-use-exceptions/">Jeff Knupp - Write Cleaner Python: Use Exceptions</a> </p>
+                    </div>
+                </div>
+                <!-- END dictionary -->
+
+                <!-- BEGIN seq-op -->
+                <div class="panel panel-primary idiom-panel" id="seq-op-idiom">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            * and + for sequences
+                            <span class="label label-default">Performance</span>
+                        </h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>In order to concatenate multiple copies of the same sequence, the most Pythonic approach is with the use of <code>*</code>:</p>
+                        {{ "idioms_examples/seq-op/seq_op_mult.py"| pygment_file|safe }}
+                        <p>For concatenating 2 list, the best approach is to sum them up:</p>
+                        {{ "idioms_examples/seq-op/seq_op_sum.py"| pygment_file|safe }}
+                        <hr>
+                        <h4>References:</h4>
+                        <p>[1] "Fluent Python" - Using + and * with sequences</p>
+                    </div>
+                </div>
+                <!-- END seq-op -->
+
+                <!-- BEGIN str-op -->
+                <div class="panel panel-primary idiom-panel" id="str-op-idiom">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            Pythonic operations over strings
+                            <span class="label label-default">Performance</span>
+                        </h2>
+                    </div>
+                    <div class="panel-body">
+                        <h2>str.<b>format()</b></h2>
+                        <p>Sometimes, for creating a new string is necessary to concatenate multiple strings</p>
+                        <h3>No pythonic</h3>
+                        {{ "idioms_examples/str-op/str_op_bad_format.py"| pygment_file|safe }}
+                        {{ "idioms_examples/str-op/str_op_bad_format_2.py"| pygment_file|safe }}
+                        <h3>Pythonic</h3>
+                        <p>The best way is the use of .format() method. It has less disadvantages and is more powerful:</p>
+                        {{ "idioms_examples/str-op/str_op_ok_format.py"| pygment_file|safe }}
+
+                        <h2>str.<b>join()</b></h2>
+                        <p>When you have to concatenate multiple string from a finite sequence, the easiest way could be a for-loop, but there is one better</p>
+                        <h3>No Pythonic</h3>
+                        {{ "idioms_examples/str-op/str_op_bad_join.py"| pygment_file|safe }}
+                        <h3>Pythonic</h3>
+                        <p>The use of join is simpliest, with better results and better performance [2]</p>
+                        {{ "idioms_examples/str-op/str_op_ok_join.py"| pygment_file|safe }}
+                        <hr>
+                        <h4>References:</h4>
+                        <p>[1] <a href="https://pyformat.info/">Using % and .format() for great good!</a> </p>
+                        <p>[2] <a href="https://waymoot.org/home/python_string/">Efficient string concatenation</a> </p>
+
+                    </div>
+                </div>
+                <!-- END str-op -->
+
+
 
             </div>
         </div>

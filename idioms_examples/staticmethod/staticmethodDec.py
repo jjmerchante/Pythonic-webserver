@@ -7,4 +7,4 @@ class A(object):
         return "I am a static_method, I don't know about the class :)"
 
 
-print A.static_foo() # I am a static_method, I don't know about the class :)
+print(A.static_foo()) # I am a static_method, I don't know about the class :)

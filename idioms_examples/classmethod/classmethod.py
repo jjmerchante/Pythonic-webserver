@@ -6,4 +6,4 @@ class A(object):
     def class_foo(cls):
         return "I am a class_method, I know about the class :)", cls
 
-print A.class_foo() # ('I am a class_method, I know about the class :)', <class '__main__.A'>)
+print(A.class_foo()) # ('I am a class_method, I know about the class :)', <class '__main__.A'>)
